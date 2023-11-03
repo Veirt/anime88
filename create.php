@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Anime88 - Create</title>
 	<link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
 	<?php require("includes/navbar.php") ?>
 
@@ -53,12 +55,13 @@
 
 			<label for="poster">Poster</label>
 			<input class="form-input" type="file" name="poster" id="poster">
-			
+
 			<div class="form-submit">
 				<input class="btn" type="submit" value="Create">
 			</div>
-			
+
 		</form>
 	</main>
 </body>
+
 </html>

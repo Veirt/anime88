@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Anime88</title>
 	<link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
 	<?php include("includes/navbar.php") ?>
 
-	<main> 
+	<main>
 		<section class="genre">
 			<div class="genre-item">
 				<img src="https://otakukart.com/wp-content/uploads/2023/01/Tokyo-Ghoul-2.jpg" alt="">
@@ -41,9 +43,9 @@
 				<h2>Sport</h2>
 			</div>
 		</section>
-		
+
 		<h1 class="section-title">Quote</h1>
-		
+
 		<section class="quote">
 			<div class="quote-content">
 			</div>
@@ -92,4 +94,5 @@
 	</main>
 	<script src="assets/js/script.js"></script>
 </body>
+
 </html>
