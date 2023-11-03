@@ -7,14 +7,7 @@
 	<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-	<nav>
-	<div>
-		<div class="logo-section">
-			<img class="logo" src="assets/logo.png" alt="">
-			<h1>Anime88</h1>
-		</div>
-	</div>
-	</nav>
+	<?php include("includes/navbar.php") ?>
 
 	<main> 
 		<section class="genre">
