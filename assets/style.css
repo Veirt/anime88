@@ -125,6 +125,55 @@ main {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.form label {
+  font-size: larger;
+  padding-left: 5px;
+  border-left: 5px solid #376995;
+  margin: 15px 0;
+}
+
+.form-input {
+  background: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.input-group {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-group div {
+  flex-basis: 50%;
+}
+
+.input-group div > * {
+  width: 93%;
+}
+
+.form-submit {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #1d3462;
+  color: #eef4f7;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 768px) {
   .genre {
     width: 100%;
