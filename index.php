@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<style>
-		html {
-			visibility: hidden;
-			opacity: 0;
-		}
-	</style>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Anime88</title>
-	<link rel="stylesheet" href="assets/style.css">
-</head>
+<?php $title = "Anime88 - Landing Page" ?>
+<?php include("includes/head.php") ?>
 
 <body>
 	<?php include("includes/navbar.php") ?>
@@ -96,9 +86,7 @@
 			</div>
 		</section>
 
-
 	</main>
-	<script src="assets/js/script.js"></script>
 </body>
 
 </html>

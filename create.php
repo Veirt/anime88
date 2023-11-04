@@ -68,12 +68,10 @@ if (isset($_POST["create"])) {
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Anime88 - Create</title>
-	<link rel="stylesheet" href="assets/style.css">
-</head>
+<?php $title = "Anime88 - Create" ?>
+<?php include("includes/head.php") ?>
+
+
 
 <body>
 	<?php require("includes/navbar.php") ?>
@@ -143,6 +141,7 @@ if (isset($_POST["create"])) {
 
 		</form>
 	</main>
+
 </body>
 
 </html>
