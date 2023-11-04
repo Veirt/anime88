@@ -122,7 +122,9 @@ main {
 .anime-poster {
   width: 250px;
   border-radius: 10px;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
 .form {
@@ -133,7 +135,7 @@ main {
 
 .form label {
   font-size: larger;
-  padding-left: 5px;
+  padding-left: 10px;
   border-left: 5px solid #376995;
   margin: 15px 0;
 }
@@ -145,6 +147,38 @@ main {
   border-radius: 8px;
 }
 
+.form-checkbox {
+  display: none;
+}
+
+.form-checkbox + label {
+  transition: all 300ms ease;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: #fff;
+  border: solid 2px #7d7d7d;
+  padding: 0.5rem 2rem;
+  margin: 15px 5px;
+  display: inline-block;
+  user-select: none;
+}
+
+.form-checkbox:checked + label {
+  transition: all 300ms ease;
+  background: #1e3a80;
+  border-color: #1e3a80;
+  color: white;
+}
+
+.checkbox-group {
+  display: flex;
+}
+
+textarea.form-input {
+  resize: vertical;
+}
+
 .input-group {
   margin: 20px 0;
   display: flex;
@@ -152,6 +186,8 @@ main {
 }
 
 .input-group div {
+  display: flex;
+  flex-direction: column;
   flex-basis: 50%;
 }
 
