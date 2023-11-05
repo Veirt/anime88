@@ -10,33 +10,33 @@
 	<main>
 		<section class="genre">
 			<div class="genre-item">
-				<img src="https://otakukart.com/wp-content/uploads/2023/01/Tokyo-Ghoul-2.jpg" alt="">
+				<img src="assets/highlights/action.avif" alt="">
 				<h2>Action</h2>
 			</div>
 
 			<div class="genre-item">
-				<img src="https://imgix.ranker.com/list_img_v2/15389/1755389/original/1755389-u6?fit=crop&fm=pjpg&q=80&dpr=2&w=1200&h=720" alt="">
+				<img src="assets/highlights/comedy.avif" alt="">
 				<h2>Comedy</h2>
 			</div>
 
 			<div class="genre-item">
-				<img src="https://twinfinite.net/wp-content/uploads/2023/07/ice-guy.jpg" alt="">
+				<img src="assets/highlights/romance.avif" alt="">
 				<h2>Romance</h2>
 			</div>
 
 			<div class="genre-item">
-				<img src="https://www.anime-evo.net/wp-content/uploads/2016/01/Grimgar_01_1.jpg" alt="">
+				<img src="assets/highlights/fantasy.avif" alt="">
 				<h2>Fantasy</h2>
 			</div>
 
 			<div class="genre-item">
-				<img src="https://images6.alphacoders.com/639/thumb-1920-639813.jpg" alt="">
+				<img src="assets/highlights/horror.avif" alt="">
 				<h2>Horror</h2>
 			</div>
 
 			<div class="genre-item">
-				<img src="https://assets-a1.kompasiana.com/items/album/2023/09/22/anime-haikyuu-0-650d04ec08a8b56f540f4b13.png" alt="">
-				<h2>Sport</h2>
+				<img src="assets/highlights/sports.avif" alt="">
+				<h2>Sports</h2>
 			</div>
 		</section>
 
