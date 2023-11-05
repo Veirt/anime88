@@ -42,6 +42,11 @@ nav {
   width: 54px;
 }
 
+.website-name {
+  color: var(--text);
+  text-decoration: none;
+}
+
 .logo-section {
   gap: 10px;
   color: var(--text);
