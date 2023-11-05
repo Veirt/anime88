@@ -162,9 +162,7 @@ main {
 .anime-poster {
   width: 250px;
   border-radius: 10px;
-  box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.15),
-    0 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
 .form {
@@ -241,6 +239,20 @@ textarea.form-input {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+}
+
+.preview-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--background-secondary);
+  width: 200px;
+}
+
+.preview {
+  width: 180px;
 }
 
 .btn {
