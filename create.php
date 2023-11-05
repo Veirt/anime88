@@ -1,6 +1,8 @@
+<?php require("utils.php") ?>
+<?php user_authorization("admin") ?>
+
 <?php
 require("connection.php");
-require("utils.php");
 
 if (isset($_POST["create"])) {
 	$name = $_POST["anime-name"];
@@ -71,8 +73,6 @@ if (isset($_POST["create"])) {
 <?php $title = "Anime88 - Create" ?>
 <?php include("includes/head.php") ?>
 
-
-
 <body>
 	<?php require("includes/navbar.php") ?>
 
@@ -95,7 +95,7 @@ if (isset($_POST["create"])) {
 					$genre = $row["name"];
 					$id = $row["id"];
 				?>
-					<input class='form-checkbox' type='checkbox' name='genre[]' value='<?= $id ?>' id="<?= $id ?>">
+					<input class='form-checkbox-chips' type='checkbox' name='genre[]' value='<?= $id ?>' id="<?= $id ?>">
 					<label for='<?= $id ?>'><?= $genre ?></label>
 				<?php } ?>
 

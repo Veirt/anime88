@@ -11,3 +11,21 @@ function redirect(string $url)
 {
     echo "<script>window.location = '$url';</script>";
 }
+
+
+function user_authorization(string $role)
+{
+    @session_start();
+
+    if (!isset($_SESSION) || !isset($_SESSION["user"])) {
+        header("Location: index.php");
+        echo "test";
+        exit;
+    }
+
+    $user = $_SESSION["user"];
+    if ($user["role"] !== $role) {
+        header("Location: index.php");
+        exit;
+    }
+}
