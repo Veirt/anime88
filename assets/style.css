@@ -307,38 +307,69 @@ textarea.form-input {
   height: 500px;
   object-position: center;
   object-fit: cover;
+  margin-left: 20px;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
+.poster-anime img:hover{
+  filter: brightness(0.6);
+}
 .anime-content {
   display: flex;
   flex-direction: column;
   flex: 2;
+  background: var(--background-secondary);
+  margin-right: 40px;
+  border-radius: 10px;
 }
 
 .anime-desc {
   flex: 100; 
-  margin-right: 20px; 
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 80px; 
+}
+.anime-desc h1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.anime-desc p {
+  margin-top: 10px;
+  text-align: justify;
 }
 
 .anime-rank {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 50px;
+  margin-left: 10px;
+  align-self: flex-start;
 }
 
 .anime-info {
-  flex: 100; 
+  flex: 10;
   margin-top: 20px;
+  margin-left: 40px;
+  align-self: flex-start;
+  background: var(--background-secondary);
+  border-radius: 20px;
 }
 
 .genre-anime {
   margin-bottom: 10px;
+  font-size: small;
 }
 
 .more-info {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 5px;
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 768px) {

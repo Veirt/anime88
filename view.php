@@ -10,7 +10,7 @@
         <main>
             <section class="preview-anime">
                 <div class="poster-anime">
-                    <img src="assets/100kanojo.jpg" alt="#"> 
+                    <img src="assets/poster/100kanojo.jpg" alt="#"> 
                 </div>
 
                 <div class="anime-content">
@@ -18,7 +18,11 @@
                         <h1> Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo </h1>
                         <p> 
                             Upon graduating middle school, Rentarou Aijou manages to confess to the girl he loves. Unfortunately, he gets rejected, making it his 100th rejection in a row. Having experienced heartbreak after heartbreak, he goes to a matchmaking shrine and prays with the hope of finally getting a girlfriend in high school. Suddenly, the god of the shrine appears, promising Rentarou that he will meet one hundred soulmates in high school.
+                        </p>
+                        <p>
                             Although skeptical at first, Rentarou quickly acknowledges the truth behind the god's words when two of his soulmates—Hakari Hanazono and Karane Inda—confess to him the very same day that they meet him. However, there was one detail that the god forgot to tell Rentarou: if any of his soulmates fails to get into a relationship with him, they will die. Now trapped in a matter of life and death, Rentarou decides to date all of his soulmates.
+                        </p>
+                        <p>
                             With a heart so big that it can be shared among one hundred girlfriends, Rentarou makes the most out of his unanticipated high school life, with the Rentarou family growing ever larger!
                         </p>
                     </div>
@@ -30,26 +34,36 @@
             </section>
 
             <section class="anime-info">
-                    <div class="genre-anime">
-                        <h1>Genre : </h1>
-                    </div>
+                
+                <div class="more-info">
+                        <div class="genre-anime">
+                            <h1>Genre : </h1>
+                        </div>
 
-                    <div class="more-info">
-                        <h1>Episodes :</h1>
-                        <p>Episode Number</p>
+                        <div class="info-row">
+                            <h1>Episodes :</h1>
+                            <p>Episode Number</p>
+                        </div>
 
-                        <h1>Status :</h1>
-                        <p>Anime Status</p>
+                        <div class="info-row">
+                            <h1>Status :</h1>
+                            <p>Anime Status</p>
+                        </div>
 
-                        <h1>Season :</h1>
-                        <p>Anime Season</p>
+                        <div class="info-row">
+                            <h1>Season :</h1>
+                            <p>Anime Season</p>
+                        </div>
 
-                        <h1>Year Released :</h1>
-                        <p>Year Anime Released</p>
+                        <div class="info-row">
+                            <h1>Year Released :</h1>
+                            <p>Year Anime Released</p>
+                        </div>
 
-                        <h1>Studio : </h1>
-                        <p>Anime Studio</p>
-
+                        <div class="info-row">
+                            <h1>Studio : </h1>
+                            <p>Anime Studio</p>
+                        </div>
                     </div>
             </section>
 
