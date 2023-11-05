@@ -213,6 +213,7 @@ main {
 
 .checkbox-group {
   display: flex;
+  flex-wrap: wrap;
 }
 
 textarea.form-input {
@@ -231,8 +232,8 @@ textarea.form-input {
   flex-basis: 50%;
 }
 
-.input-group div > * {
-  width: 93%;
+.input-group div:first-child {
+  padding-right: 15px;
 }
 
 .form-submit {
@@ -302,5 +303,9 @@ textarea.form-input {
 
   .anime-title {
     font-size: small;
+  }
+
+  .form {
+    width: 90%;
   }
 }
