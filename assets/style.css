@@ -290,6 +290,57 @@ textarea.form-input {
   background-color: var(--accent);
 }
 
+.preview-anime {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.poster-anime {
+  margin: 10px;
+  width: 100px;
+  flex-basis: 25%;
+  display: flex;
+}
+.poster-anime img {
+  width: auto;
+  height: 500px;
+  object-position: center;
+  object-fit: cover;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.anime-content {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.anime-desc {
+  flex: 100; 
+  margin-right: 20px; 
+}
+
+.anime-rank {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.anime-info {
+  flex: 100; 
+  margin-top: 20px;
+}
+
+.genre-anime {
+  margin-bottom: 10px;
+}
+
+.more-info {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 5px;
+}
+
 @media only screen and (max-width: 768px) {
   .genre {
     width: 100%;
