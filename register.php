@@ -22,6 +22,7 @@ if (isset($_POST["register"])) {
 	if (!check_valid_username($connection, $username)) {
 		echo "<script>alert('Username telah digunakan!')</script>";
 		redirect("register.php");
+		exit;
 	}
 
 	$hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -57,10 +58,12 @@ if (isset($_POST["register"])) {
 		<form class="form auth" action="" method="post">
 			<div class="section-title">Register</div>
 			<label for="username">Username</label>
-			<input required placeholder="Enter your username" class="form-input" type="text" name="username" id="username">
+			<input required placeholder="Enter your username" class="form-input" type="text" name="username"
+				id="username">
 
 			<label for="password">Password</label>
-			<input required placeholder="Enter your password" class="form-input" type="password" name="password" id="password">
+			<input required placeholder="Enter your password" class="form-input" type="password" name="password"
+				id="password">
 
 			<input style="margin-top: 30px;" class="btn" type="submit" name="register" value="Register">
 		</form>
