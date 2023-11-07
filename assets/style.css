@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
 
-html {
-  visibility: visible !important;
-  opacity: 1;
-}
-
 :root[data-theme="light"] {
   --text: #0b0f18;
   --background: #edeaea;
@@ -173,7 +168,9 @@ main {
 .anime-poster {
   width: 250px;
   border-radius: 10px;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
 .form {
@@ -310,10 +307,12 @@ textarea.form-input {
   width: auto;
   object-position: center;
   object-fit: cover;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
-.poster-anime img:hover{
+.poster-anime img:hover {
   filter: brightness(0.6);
 }
 .anime-content {
@@ -322,13 +321,13 @@ textarea.form-input {
 }
 
 .anime-desc {
-  flex: 100; 
+  flex: 100;
   margin-top: 20px;
   background: var(--background-secondary);
   border-radius: 10px;
   padding: 20px;
 }
-.anime-desc h1{
+.anime-desc h1 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
