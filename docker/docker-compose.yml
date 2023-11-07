@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ../:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - php-fpm
+      - db
+
+  php-fpm:
+    build:
+      context: .
+      dockerfile: php-fpm.Dockerfile
+    environment:
+      DB_USER: "root"
+      DB_HOST: "db"
+    volumes:
+      - ../:/var/www/html
+
+  db:
+    image: mariadb:10.6
+    volumes:
+      - ../database/anime88.sql:/docker-entrypoint-initdb.d/dump.sql
+    restart: always
+    environment:
+      MARIADB_DATABASE: "anime88"
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 1
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - PMA_ARBITRARY=1
