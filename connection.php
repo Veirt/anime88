@@ -1,8 +1,8 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$password = "";
+$host = isset($_ENV["DB_HOST"]) ? $_ENV["DB_HOST"] : "localhost";
+$user = isset($_ENV["DB_USER"]) ? $_ENV["DB_USER"] : "root";
+$password = isset($_ENV["DB_PASSWORD"]) ? $_ENV["DB_PASSWORD"] : "";
 $database = "anime88";
 
 $connection = mysqli_connect($host, $user, $password, $database);
