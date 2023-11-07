@@ -97,6 +97,7 @@ if (isset($_POST["create"])) {
 				?>
 					<input class='form-checkbox-chips' type='checkbox' name='genre[]' value='<?= $id ?>' id="<?= $id ?>">
 					<label for='<?= $id ?>'><?= $genre ?></label>
+					
 				<?php } ?>
 
 			</div>

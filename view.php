@@ -37,31 +37,31 @@
                 
                 <div class="more-info">
                         <div class="genre-anime">
-                            <h1>Genre : </h1>
+                            <h5>Genre : </h5>
                         </div>
 
                         <div class="info-row">
-                            <h1>Episodes :</h1>
+                            <h5>Episodes :</h5>
                             <p>Episode Number</p>
                         </div>
 
                         <div class="info-row">
-                            <h1>Status :</h1>
+                            <h5>Status :</h5>
                             <p>Anime Status</p>
                         </div>
 
                         <div class="info-row">
-                            <h1>Season :</h1>
+                            <h5>Season :</h5>
                             <p>Anime Season</p>
                         </div>
 
                         <div class="info-row">
-                            <h1>Year Released :</h1>
+                            <h5>Year Released :</h5>
                             <p>Year Anime Released</p>
                         </div>
 
                         <div class="info-row">
-                            <h1>Studio : </h1>
+                            <h5>Studio : </h5>
                             <p>Anime Studio</p>
                         </div>
                     </div>

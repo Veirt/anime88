@@ -7,8 +7,8 @@ html {
 
 :root[data-theme="light"] {
   --text: #0b0f18;
-  --background: #ccd0db;
-  --background-secondary: #c6c9d4;
+  --background: #edeaea;
+  --background-secondary: #dbdde1;
   --primary: #1b2d69;
   --secondary: #d4dfe3;
   --accent: #7b428f;
@@ -42,7 +42,7 @@ nav {
   display: flex;
   justify-content: space-between;
   background: var(--background-secondary);
-  padding: 20px;
+  padding: 15px;
 }
 
 .logo {
@@ -361,14 +361,15 @@ textarea.form-input {
 }
 
 .more-info {
-  font-size: small;
+  font-size: smaller;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .info-row {
   display: flex;
-  justify-content: space-between;
+  text-align: justify;
   margin-bottom: 10px;
 }
 
