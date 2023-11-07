@@ -30,10 +30,9 @@
                         <div class="anime-rank">
                             <h3>Score</h3>
                             <h1>7.25</h1>
-                        </div>
-                        <div class="user-count">
-                            <h3>User Reviwed</h3>
-                            <h1>1</h1>
+                            <div>
+                                <p>X users</p>
+                            </div>
                         </div>
                         <div>
                             <select class="rating-option" name="rating" id="rate">
