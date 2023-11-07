@@ -402,6 +402,19 @@ textarea.form-input {
   font-weight: bold;
 }
 
+.genre-main {
+  padding: 0px 0px;
+}
+.genre-page {
+  width: 90%;
+}
+
+.genre-title {
+  display: flex;
+  justify-content: space-between;
+
+}
+
 @media only screen and (max-width: 768px) {
   .genre {
     width: 100%;
