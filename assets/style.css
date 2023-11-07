@@ -392,6 +392,17 @@ textarea.form-input {
   background-color: var(--background);
 }
 
+.welcome-user {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.welcome-user h1 {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 768px) {
   .genre {
     width: 100%;
