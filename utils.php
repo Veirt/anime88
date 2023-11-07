@@ -15,7 +15,7 @@ function redirect(string $url)
 
 function user_authorization(string $role)
 {
-    @session_start();
+    if (!isset($_SESSION)) session_start();
 
     if (!isset($_SESSION) || !isset($_SESSION["user"])) {
         header("Location: index.php");

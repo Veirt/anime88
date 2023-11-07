@@ -1,3 +1,4 @@
+<?php require("session_start.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,8 +69,8 @@ if (isset($_POST["login"])) {
 		"role" => $row['role']
 	];
 
-
-	header("Location: index.php");
+	redirect("index.php");
+	exit;
 }
 
 ?>

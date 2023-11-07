@@ -1,5 +1,4 @@
 <?php
-@session_start();
 
 // kalo sedang login: true
 // kalo ga: false
