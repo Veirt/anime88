@@ -26,9 +26,30 @@
                             With a heart so big that it can be shared among one hundred girlfriends, Rentarou makes the most out of his unanticipated high school life, with the Rentarou family growing ever larger!
                         </p>
                     </div>
-                    <div class="anime-rank">
-                        <h3>Score</h3>
-                        <h1>7.25</h1>
+                    <div class="anime-stat">
+                        <div class="anime-rank">
+                            <h3>Score</h3>
+                            <h1>7.25</h1>
+                        </div>
+                        <div class="user-count">
+                            <h3>User Reviwed</h3>
+                            <h1>1</h1>
+                        </div>
+                        <div>
+                            <select class="rating-option" name="rating" id="rate">
+                                <option selected="selected" value="0">Select</option>
+                                <option value="10">(10)</option>
+                                <option value="9">(9)</option>
+                                <option value="8">(8)</option>
+                                <option value="7">(7)</option>
+                                <option value="6">(6)</option>
+                                <option value="5">(5)</option>
+                                <option value="4">(4)</option>
+                                <option value="3">(3)</option>
+                                <option value="2">(2)</option>
+                                <option value="1">(1)</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -37,31 +58,31 @@
                 
                 <div class="more-info">
                         <div class="genre-anime">
-                            <h5>Genre : </h5>
+                            <h3>Genre : </h3>
                         </div>
 
                         <div class="info-row">
-                            <h5>Episodes :</h5>
+                            <h3>Episodes :</h3>
                             <p>Episode Number</p>
                         </div>
 
                         <div class="info-row">
-                            <h5>Status :</h5>
+                            <h3>Status :</h3>
                             <p>Anime Status</p>
                         </div>
 
                         <div class="info-row">
-                            <h5>Season :</h5>
+                            <h3>Season :</h3>
                             <p>Anime Season</p>
                         </div>
 
                         <div class="info-row">
-                            <h5>Year Released :</h5>
+                            <h3>Year Released :</h3>
                             <p>Year Anime Released</p>
                         </div>
 
                         <div class="info-row">
-                            <h5>Studio : </h5>
+                            <h3>Studio : </h3>
                             <p>Anime Studio</p>
                         </div>
                     </div>
