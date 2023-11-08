@@ -1,13 +1,13 @@
 const quoteElement = document.querySelector(".quote-content");
 
 if (quoteElement) {
-  fetch("https://animechan.xyz/api/random", {
-    mode: "cors",
-  })
-    .then(response => response.json())
-    .then(quote => {
+  fetch("api/quote.php")
+    .then((response) => response.json())
+    .then((quote) => {
       quoteElement.innerHTML = quote.quote;
-      document.querySelector(".quote-author").innerHTML = `${quote.character} - ${quote.anime}`;
+      document.querySelector(
+        ".quote-author",
+      ).innerHTML = `${quote.character} - ${quote.anime}`;
     });
 }
 
@@ -33,5 +33,7 @@ document.getElementById("toggle-dark").addEventListener("click", switchTheme);
 function previewPoster(event) {
   const previewWrapperEl = document.querySelector(".preview-wrapper");
   if (previewWrapperEl) previewWrapperEl.style.visibility = "visible";
-  document.getElementById("poster-preview").src = URL.createObjectURL(event.files[0]);
+  document.getElementById("poster-preview").src = URL.createObjectURL(
+    event.files[0],
+  );
 }
