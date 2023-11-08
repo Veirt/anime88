@@ -142,7 +142,7 @@ if (isset($_POST["create"])) {
 			<input class="form-input" type="text" name="studio" id="studio">
 
 			<label for="poster">Poster</label>
-			<input class="form-input" type="file" name="poster" id="poster" onchange="previewPoster(this)">
+			<input class="form-input" type="file" accept="image/*" name="poster" id="poster" onchange="previewPoster(this)">
 			<div style="visibility: hidden;" class="preview-wrapper">
 				<img id="poster-preview" class="preview" src="">
 			</div>
