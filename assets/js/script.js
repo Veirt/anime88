@@ -28,7 +28,15 @@ function switchTheme() {
   }
 }
 
-document.getElementById("toggle-dark").addEventListener("click", switchTheme);
+document.getElementById("change-theme").addEventListener("click", function () {
+  if (this.src.endsWith("light.svg")) {
+    this.src = "assets/icons/dark.svg";
+  } else {
+    this.src = "assets/icons/light.svg";
+  }
+
+  switchTheme();
+});
 
 function previewPoster(event) {
   const previewWrapperEl = document.querySelector(".preview-wrapper");

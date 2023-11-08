@@ -23,8 +23,7 @@ function check_login_status()
 		</a>
 	</div>
 
-	<div>
-		<button id="toggle-dark">toggle</button>
+	<div class="right-section">
 
 		<?php if (!check_login_status()) : ?>
 			<a href="login.php">
@@ -41,3 +40,5 @@ function check_login_status()
 
 	</div>
 </nav>
+
+<img id="change-theme" src="assets/icons/light.svg">
