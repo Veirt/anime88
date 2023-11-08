@@ -1,3 +1,4 @@
+<?php require("session_start.php") ?>
 <?php
 require("connection.php");
 require("utils.php");
@@ -20,7 +21,7 @@ if (isset($_POST["register"])) {
 	$password = $_POST["password"];
 
 	if (!check_valid_username($connection, $username)) {
-		echo "<script>alert('Username telah digunakan!')</script>";
+		create_message("Username telah digunakan!", "error");
 		redirect("register.php");
 		exit;
 	}
@@ -33,13 +34,15 @@ if (isset($_POST["register"])) {
 
 	if ($stmt->execute()) {
 		$stmt->close();
-		echo "<script>alert('Register berhasil!')</script>";
+		create_message("Register berhasil dilakukan.", "success");
 		redirect("login.php");
 	} else {
 		$stmt->close();
-		echo "<script>alert('Register gagal.')</script>";
+		create_message("Register gagal.", "error");
 		redirect("register.php");
 	}
+
+	exit;
 }
 
 ?>
@@ -57,13 +60,17 @@ if (isset($_POST["register"])) {
 	<main>
 		<form class="form auth" action="" method="post">
 			<div class="section-title">Register</div>
+			<?php if (isset($_SESSION["message"])) { ?>
+				<div class="message <?= $_SESSION['message']['type'] ?>">
+					<?= $_SESSION["message"]["content"]; ?>
+					<?php unset($_SESSION["message"]) ?>
+				</div>
+			<?php } ?>
 			<label for="username">Username</label>
-			<input required placeholder="Enter your username" class="form-input" type="text" name="username"
-				id="username">
+			<input required placeholder="Enter your username" class="form-input" type="text" name="username" id="username">
 
 			<label for="password">Password</label>
-			<input required placeholder="Enter your password" class="form-input" type="password" name="password"
-				id="password">
+			<input required placeholder="Enter your password" class="form-input" type="password" name="password" id="password">
 
 			<input style="margin-top: 30px;" class="btn" type="submit" name="register" value="Register">
 		</form>

@@ -8,6 +8,8 @@
   --secondary: #d4dfe3;
   --accent: #7b428f;
   --green: #059669;
+  --red: #db2350;
+  --white: #e7ebf4;
 }
 :root[data-theme="dark"] {
   --text: #e7ebf4;
@@ -17,6 +19,8 @@
   --secondary: #1c272b;
   --accent: #a970bd;
   --green: #059669;
+  --red: #db2350;
+  --white: #e7ebf4;
 }
 
 * {
@@ -430,6 +434,20 @@ textarea.form-input {
 .genre-title {
   display: flex;
   justify-content: space-between;
+}
+
+.error {
+  background: var(--red);
+}
+
+.success {
+  background: var(--green);
+}
+
+.message {
+  border-radius: 15px;
+  padding: 15px;
+  color: var(--white);
 }
 
 @media only screen and (max-width: 768px) {

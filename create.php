@@ -20,20 +20,20 @@ if (isset($_POST["create"])) {
 
 
 	if (getimagesize($temp) === false) {
-		echo "<script>alert('File yang Anda upload bukan gambar.');</script>";
+		create_message("File yang Anda upload bukan gambar.", "error");
 		redirect("create.php");
 		exit;
 	}
 
 	$TEN_MB_SIZE = 10000000;
 	if ($_FILES["poster"]["size"] > $TEN_MB_SIZE) {
-		echo "<script>alert('Size image terlalu besar!');</script>";
+		create_message("Size image terlalu besar!", "error");
 		redirect("create.php");
 		exit;
 	}
 
 	if (!move_uploaded_file($temp, "assets/poster/$target_file_name")) {
-		echo "<script>alert('Gagal upload gambar!');</script>";
+		create_message("Gagal mengupload gambar.", "error");
 		redirect("create.php");
 		exit;
 	}
@@ -44,8 +44,9 @@ if (isset($_POST["create"])) {
 
 	if (!$stmt->execute()) {
 		$stmt->close();
-		echo "<script>alert('Gagal menambahkan anime!');</script>";
+		create_message("Gagal menambahkan anime.", "error");
 		redirect("create.php");
+		exit;
 	}
 
 	$stmt->close();
@@ -78,6 +79,13 @@ if (isset($_POST["create"])) {
 
 	<main>
 		<form class="form" action="" method="post" enctype="multipart/form-data">
+			<?php if (isset($_SESSION["message"])) { ?>
+				<div class="message <?= $_SESSION['message']['type'] ?>">
+					<?= $_SESSION["message"]["content"]; ?>
+					<?php unset($_SESSION["message"]) ?>
+				</div>
+			<?php } ?>
+
 			<label for="anime-name">Nama Anime</label>
 			<input required class="form-input" type="text" name="anime-name" id="anime-name">
 

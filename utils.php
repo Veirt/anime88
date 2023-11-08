@@ -29,3 +29,13 @@ function user_authorization(string $role)
         exit;
     }
 }
+
+/*
+  Type: success, error, warning
+*/
+function create_message(string $content, string $type)
+{
+    if (!isset($_SESSION)) session_start();
+
+    $_SESSION["message"] = ["content" => $content, "type" => $type];
+}

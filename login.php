@@ -11,6 +11,12 @@
 	<main>
 		<form class="form auth" action="" method="post">
 			<div class="section-title">Login</div>
+			<?php if (isset($_SESSION["message"])) { ?>
+				<div class="message <?= $_SESSION['message']['type'] ?>">
+					<?= $_SESSION["message"]["content"]; ?>
+					<?php unset($_SESSION["message"]) ?>
+				</div>
+			<?php } ?>
 			<label for="username">Username</label>
 			<input value="<?= isset($_SESSION['username']) ? $_SESSION['username'] : '' ?>" required placeholder="Enter your username" class="form-input" type="text" name="username" id="username">
 
@@ -52,7 +58,7 @@ if (isset($_POST["login"])) {
 
 	// jika username tidak ada/salah password
 	if ($row == NULL || !password_verify($password, $row['password'])) {
-		$_SESSION["message"] = "Username atau password salah!";
+		create_message("Username atau password salah!", "error");
 		redirect("login.php");
 		exit;
 	}
