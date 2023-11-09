@@ -156,7 +156,7 @@ function get_genre(int $id)
                 <div class="info-row">
                     <div class="genre-info-wrapper">
                         <?php foreach (get_genre($id) as $genre) : ?>
-                            <div class="genre"><?= $genre ?></div>
+                            <div class="genre-chip"><?= $genre ?></div>
                         <?php endforeach ?>
                     </div>
                 </div>
