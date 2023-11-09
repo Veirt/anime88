@@ -557,4 +557,16 @@ textarea.form-input {
   .form {
     width: 90%;
   }
+
+  .preview-anime {
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+  }
+
+  .anime-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
