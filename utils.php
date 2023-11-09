@@ -39,3 +39,15 @@ function create_message(string $content, string $type)
 
     $_SESSION["message"] = ["content" => $content, "type" => $type];
 }
+
+function show_message()
+{
+
+    if (isset($_SESSION["message"])) {
+        $message_type = $_SESSION["message"]["type"];
+        echo " <div class='message $message_type'>";
+        echo $_SESSION["message"]["content"];
+        unset($_SESSION["message"]);
+        echo "</div>";
+    };
+}

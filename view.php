@@ -1,95 +1,191 @@
+<?php require("utils.php") ?>
+<?php require("connection.php") ?>
+
+
+<?php
+
+if (!isset($_GET["id"])) {
+    create_message("Cara pengaksesan view salah!", "error");
+    $title = "Anime88 - Error";
+} else {
+    $id = $_GET["id"];
+
+    $query = "SELECT * FROM anime WHERE id = ?";
+    $stmt = $connection->prepare($query);
+    $stmt->bind_param("i", $id);
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $stmt->close();
+
+    if (mysqli_num_rows($result) < 1) {
+        create_message("Anime dengan id $id tidak ada.", "error");
+        $title = "Anime88 - Error";
+    } else {
+        $row = $result->fetch_assoc();
+
+        $anime_name = $row['name'];
+        $poster_path = $row['poster'];
+        $title = "Anime88 - $anime_name";
+    }
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
-<?php $title = "Anime88 - View - Anime" ?>
+<?php $title = $title ?>
 <?php include("includes/head.php") ?>
 
-    <body>
-        <?php include("includes/navbar.php") ?>
+<?php
 
-        <main>
-            <section class="preview-anime">
-                <div class="poster-anime">
-                    <img src="assets/poster/100kanojo.jpg" alt="#"> 
+function get_avg_rating(int $id)
+{
+    require("connection.php");
+
+    $query = "SELECT ROUND(AVG(rating), 2) AS avg FROM anime JOIN reviews ON anime.id = reviews.id_anime WHERE anime.id = ?";
+    $stmt = $connection->prepare($query);
+    $stmt->bind_param("i", $id);
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $stmt->close();
+
+    if (mysqli_num_rows($result) == 0) {
+        return "-";
+    } else {
+        return $result->fetch_assoc()["avg"];
+    }
+}
+
+function get_user_counts(int $id)
+{
+    require("connection.php");
+
+    $query = "SELECT COUNT(*) AS count FROM reviews WHERE id_anime = ?";
+    $stmt = $connection->prepare($query);
+    $stmt->bind_param("i", $id);
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $stmt->close();
+    return $result->fetch_assoc()["count"];
+}
+
+function get_genre(int $id)
+{
+    require("connection.php");
+
+    $query = "SELECT genre.name AS genres FROM anime
+    JOIN anime_genre ON anime.id = anime_genre.id_anime
+    JOIN genre ON anime_genre.id_genre = genre.id
+    WHERE anime.id = ?";
+    $stmt = $connection->prepare($query);
+    $stmt->bind_param("i", $id);
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $stmt->close();
+
+    // get all result and join them with comma
+    $genres = array();
+    while ($row = $result->fetch_assoc()) {
+        array_push($genres, $row["genres"]);
+    }
+
+    return $genres;
+}
+
+?>
+
+<body>
+    <?php include("includes/navbar.php") ?>
+    <main>
+        <?php
+        if (isset($_SESSION["message"])) {
+            show_message();
+            exit();
+        }
+        ?>
+
+        <section class="preview-anime">
+            <div class="poster-anime">
+                <img src="assets/poster/<?= $poster_path ?>" alt="#">
+            </div>
+
+            <div class="anime-content">
+                <div class="anime-desc">
+                    <h1><?= $row['name'] ?></h1>
+                    <p>
+                        <?= $row['synopsis'] ?>
+                    </p>
                 </div>
-
-                <div class="anime-content">
-                    <div class="anime-desc">
-                        <h1> Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo </h1>
-                        <p> 
-                            Upon graduating middle school, Rentarou Aijou manages to confess to the girl he loves. Unfortunately, he gets rejected, making it his 100th rejection in a row. Having experienced heartbreak after heartbreak, he goes to a matchmaking shrine and prays with the hope of finally getting a girlfriend in high school. Suddenly, the god of the shrine appears, promising Rentarou that he will meet one hundred soulmates in high school.
-                        </p>
-                        <p>
-                            Although skeptical at first, Rentarou quickly acknowledges the truth behind the god's words when two of his soulmates—Hakari Hanazono and Karane Inda—confess to him the very same day that they meet him. However, there was one detail that the god forgot to tell Rentarou: if any of his soulmates fails to get into a relationship with him, they will die. Now trapped in a matter of life and death, Rentarou decides to date all of his soulmates.
-                        </p>
-                        <p>
-                            With a heart so big that it can be shared among one hundred girlfriends, Rentarou makes the most out of his unanticipated high school life, with the Rentarou family growing ever larger!
-                        </p>
-                    </div>
-                    <div class="anime-stat">
-                        <div class="anime-rank">
-                            <h3>Score</h3>
-                            <h1>7.25</h1>
-                            <div>
-                                <p>X users</p>
-                            </div>
-                        </div>
+                <div class="anime-stat">
+                    <div class="anime-rank">
+                        <h3>Score</h3>
+                        <h1><?= get_avg_rating($id) ?></h1>
                         <div>
-                            <select class="rating-option" name="rating" id="rate">
-                                <option selected="selected" value="0">Select</option>
-                                <option value="10">(10)</option>
-                                <option value="9">(9)</option>
-                                <option value="8">(8)</option>
-                                <option value="7">(7)</option>
-                                <option value="6">(6)</option>
-                                <option value="5">(5)</option>
-                                <option value="4">(4)</option>
-                                <option value="3">(3)</option>
-                                <option value="2">(2)</option>
-                                <option value="1">(1)</option>
-                            </select>
+                            <p><?= get_user_counts($id) ?> users</p>
                         </div>
+                    </div>
+                    <div>
+                        <select class="rating-option" name="rating" id="rate">
+                            <option selected="selected" value="0">Select</option>
+                            <option value="10">(10)</option>
+                            <option value="9">(9)</option>
+                            <option value="8">(8)</option>
+                            <option value="7">(7)</option>
+                            <option value="6">(6)</option>
+                            <option value="5">(5)</option>
+                            <option value="4">(4)</option>
+                            <option value="3">(3)</option>
+                            <option value="2">(2)</option>
+                            <option value="1">(1)</option>
+                        </select>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="anime-info">
-                
-                <div class="more-info">
-                        <div class="genre-anime">
-                            <h3>Genre : </h3>
-                        </div>
-
-                        <div class="info-row">
-                            <h3>Episodes :</h3>
-                            <p>Episode Number</p>
-                        </div>
-
-                        <div class="info-row">
-                            <h3>Status :</h3>
-                            <p>Anime Status</p>
-                        </div>
-
-                        <div class="info-row">
-                            <h3>Season :</h3>
-                            <p>Anime Season</p>
-                        </div>
-
-                        <div class="info-row">
-                            <h3>Year Released :</h3>
-                            <p>Year Anime Released</p>
-                        </div>
-
-                        <div class="info-row">
-                            <h3>Studio : </h3>
-                            <p>Anime Studio</p>
-                        </div>
+        <section class="anime-info">
+            <div class="more-info">
+                <div class="info-row">
+                    <div class="genre-info-wrapper">
+                        <?php foreach (get_genre($id) as $genre) : ?>
+                            <div class="genre"><?= $genre ?></div>
+                        <?php endforeach ?>
                     </div>
-            </section>
+                </div>
 
-        </main>
+                <div class="info-row">
+                    <h3>Episodes</h3>
+                    <p><?= $row['episodes'] ?></p>
+                </div>
 
-    </body>
+                <div class="info-row">
+                    <h3>Status</h3>
+                    <p><?= $row['status'] ?></p>
+                </div>
+
+                <div class="info-row">
+                    <h3>Season</h3>
+                    <p><?= $row['season'] . " " . $row['year'] ?></p>
+                </div>
+
+                <div class="info-row">
+                    <h3>Studio </h3>
+                    <p><?= $row['studio'] ?></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
 
 
 </html>
