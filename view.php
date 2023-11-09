@@ -1,3 +1,4 @@
+<?php require("session_start.php") ?>
 <?php require("utils.php") ?>
 <?php require("connection.php") ?>
 

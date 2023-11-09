@@ -42,6 +42,7 @@ function create_message(string $content, string $type)
 
 function show_message()
 {
+    if (!isset($_SESSION)) session_start();
 
     if (isset($_SESSION["message"])) {
         $message_type = $_SESSION["message"]["type"];

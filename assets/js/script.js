@@ -48,16 +48,16 @@ function previewPoster(event) {
 
 const userActionButton = document.querySelector(".user-action-button");
 const userActionDropdown = document.querySelector(".user-action-dropdown");
-userActionButton.addEventListener("click", () => {
-  userActionDropdown.classList.toggle("show");
-});
+if (userActionButton)
+  userActionButton.addEventListener("click", () => {
+    userActionDropdown.classList.toggle("show");
+  });
 
 window.onclick = function (event) {
   if (
     !event.target.matches(".user-action-button") &&
     event.target.parentNode !== userActionButton
   ) {
-    console.log("triggered");
     if (userActionDropdown.classList.contains("show")) {
       userActionDropdown.classList.remove("show");
     }
