@@ -1,7 +1,9 @@
 <?php require("session_start.php") ?>
+<?php require("utils.php") ?>
+<?php redirect_if_logged_in() ?>
+
 <?php
 require("connection.php");
-require("utils.php");
 
 function check_valid_username(mysqli $connection, string $username)
 {

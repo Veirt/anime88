@@ -1,4 +1,6 @@
 <?php require("session_start.php") ?>
+<?php require("utils.php") ?>
+<?php redirect_if_logged_in() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +42,6 @@
 
 <?php
 require("connection.php");
-require("utils.php");
 
 if (isset($_POST["login"])) {
 	$username = $_POST["username"];

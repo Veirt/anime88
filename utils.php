@@ -15,11 +15,10 @@ function redirect(string $url)
 
 function user_authorization(string $role)
 {
-    if (!isset($_SESSION)) session_start();
+    require("session_start.php");
 
     if (!isset($_SESSION) || !isset($_SESSION["user"])) {
         header("Location: index.php");
-        echo "test";
         exit;
     }
 
@@ -30,19 +29,29 @@ function user_authorization(string $role)
     }
 }
 
+function redirect_if_logged_in()
+{
+    require("session_start.php");
+
+    if (isset($_SESSION["user"])) {
+        header("Location: index.php");
+        exit;
+    }
+}
+
 /*
   Type: success, error, warning
 */
 function create_message(string $content, string $type)
 {
-    if (!isset($_SESSION)) session_start();
+    require("session_start.php");
 
     $_SESSION["message"] = ["content" => $content, "type" => $type];
 }
 
 function show_message()
 {
-    if (!isset($_SESSION)) session_start();
+    require("session_start.php");
 
     if (isset($_SESSION["message"])) {
         $message_type = $_SESSION["message"]["type"];
