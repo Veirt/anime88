@@ -292,10 +292,12 @@ main {
   border-radius: 50px;
   background: var(--background-secondary);
   border: solid 2px var(--secondary);
-  padding: 0.5rem 2rem;
-  margin: 15px 5px;
+  padding: 0.5rem 1rem;
+  margin: 5px;
   display: inline-block;
   user-select: none;
+  text-align: center;
+  min-width: 60px;
 }
 
 .form-checkbox-chips:checked + label {

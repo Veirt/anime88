@@ -95,9 +95,10 @@ if (isset($_POST["create"])) {
 			<label for="episodes">Jumlah Episode</label>
 			<input required class="form-input" type="number" name="episodes" id="episodes">
 
+			<label>Genre</label>
 			<div class="checkbox-group">
 				<?php
-				$query = "SELECT * FROM genre";
+				$query = "SELECT * FROM genre ORDER BY name ASC";
 				$result = $connection->query($query);
 				while ($row = $result->fetch_assoc()) {
 					$genre = $row["name"];

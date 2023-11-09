@@ -57,9 +57,6 @@ function check_login_status()
 				</button>
 
 			</div>
-			<!-- <a href="logout.php"> -->
-			<!-- 	<button class="btn btn-accent">Log out</button> -->
-			<!-- </a> -->
 		<?php endif ?>
 		<ul class="user-action-dropdown">
 			<li>
