@@ -113,9 +113,14 @@ if (isset($_POST["create"])) {
 <?php include("includes/head.php") ?>
 
 <body>
-	<?php require("includes/navbar.php") ?>
+	<?php $sidebar_active = "create" ?>
+	<?php include("includes/sidebar.php") ?>
 
-	<main>
+	<main class="dashboard-form">
+		<div style="width: 100%;">
+			<?php include("includes/navbar.php") ?>
+		</div>
+
 		<form class="form" action="" method="post" enctype="multipart/form-data">
 			<?php if (isset($_SESSION["message"])) { ?>
 				<div class="message <?= $_SESSION['message']['type'] ?>">
