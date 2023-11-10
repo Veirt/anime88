@@ -1,6 +1,32 @@
 <?php require("utils.php") ?>
 <?php user_authorization("admin") ?>
 
+
+<?php
+function check_valid_anime_name(string $anime_name)
+{
+	require("connection.php");
+
+	$query = "SELECT * FROM anime WHERE name = ?";
+	$stmt = $connection->prepare($query);
+
+	$stmt->bind_param("s", $anime_name);
+
+	$stmt->execute();
+	$result = $stmt->get_result();
+
+
+	if (mysqli_num_rows($result) > 0) {
+		$stmt->close();
+		return false;
+	}
+
+	$stmt->close();
+	return true;
+}
+
+?>
+
 <?php
 require("connection.php");
 
@@ -17,6 +43,18 @@ if (isset($_POST["create"])) {
 	$file_extension = pathinfo($original_file_name, PATHINFO_EXTENSION);
 	$temp = $_FILES["poster"]["tmp_name"];
 	$target_file_name = sanitize_file_name("$name") . ".$file_extension";
+
+	if (!check_valid_anime_name($name)) {
+		create_message("Nama anime sudah ada.", "error");
+		redirect("create.php");
+		exit;
+	}
+
+	if (!isset($_POST["genre"])) {
+		create_message("Silakan pilih genre minimal satu.", "error");
+		redirect("create.php");
+		exit;
+	}
 
 
 	if (getimagesize($temp) === false) {
@@ -90,7 +128,7 @@ if (isset($_POST["create"])) {
 			<input required class="form-input" type="text" name="anime-name" id="anime-name">
 
 			<label for="synopsis">Sinopsis</label>
-			<textarea requried class="form-input" type="text" name="synopsis" id="synopsis"> </textarea>
+			<textarea required class="form-input" type="text" name="synopsis" id="synopsis"></textarea>
 
 			<label for="episodes">Jumlah Episode</label>
 			<input required class="form-input" type="number" name="episodes" id="episodes">
@@ -112,7 +150,7 @@ if (isset($_POST["create"])) {
 			</div>
 
 			<label for="status">Status</label>
-			<select class="form-input" name="status" id="status">
+			<select required class="form-input" name="status" id="status">
 				<option hidden selected value="">Pilih Status</option>
 				<option value="Airing">Airing</option>
 				<option value="Finished">Finished</option>
@@ -122,7 +160,7 @@ if (isset($_POST["create"])) {
 			<div class="input-group">
 				<div>
 					<label for="season">Season</label>
-					<select class="form-input" name="season" id="season">
+					<select required class="form-input" name="season" id="season">
 						<option hidden selected value="">Pilih Season</option>
 						<option value="Winter">Winter</option>
 						<option value="Spring">Spring</option>
@@ -133,17 +171,17 @@ if (isset($_POST["create"])) {
 
 				<div>
 					<label for="year">Tahun</label>
-					<input class="form-input" name="year" id="year" type="number" min="1900" max="2099" step="1" />
+					<input required class="form-input" name="year" id="year" type="number" min="1900" max="2099" step="1" />
 				</div>
 
 			</div>
 
 
 			<label for="studio">Studio</label>
-			<input class="form-input" type="text" name="studio" id="studio">
+			<input required class="form-input" type="text" name="studio" id="studio">
 
 			<label for="poster">Poster</label>
-			<input class="form-input" type="file" accept="image/*" name="poster" id="poster" onchange="previewPoster(this)">
+			<input required class="form-input" type="file" accept="image/*" name="poster" id="poster" onchange="previewPoster(this)">
 			<div style="visibility: hidden;" class="preview-wrapper">
 				<img id="poster-preview" class="preview" src="">
 			</div>
