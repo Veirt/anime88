@@ -28,15 +28,17 @@ function switchTheme() {
   }
 }
 
-document.getElementById("change-theme").addEventListener("click", function () {
-  if (this.src.endsWith("light.svg")) {
-    this.src = "assets/icons/dark.svg";
-  } else {
-    this.src = "assets/icons/light.svg";
-  }
+const changeThemeButton = document.getElementById("change-theme");
+if (changeThemeButton)
+  changeThemeButton.addEventListener("click", function () {
+    if (this.src.endsWith("light.svg")) {
+      this.src = "assets/icons/dark.svg";
+    } else {
+      this.src = "assets/icons/light.svg";
+    }
 
-  switchTheme();
-});
+    switchTheme();
+  });
 
 function previewPoster(event) {
   const previewWrapperEl = document.querySelector(".preview-wrapper");
@@ -48,18 +50,19 @@ function previewPoster(event) {
 
 const userActionButton = document.querySelector(".user-action-button");
 const userActionDropdown = document.querySelector(".user-action-dropdown");
-if (userActionButton)
+if (userActionButton && userActionDropdown) {
   userActionButton.addEventListener("click", () => {
     userActionDropdown.classList.toggle("show");
   });
 
-window.onclick = function (event) {
-  if (
-    !event.target.matches(".user-action-button") &&
-    event.target.parentNode !== userActionButton
-  ) {
-    if (userActionDropdown.classList.contains("show")) {
-      userActionDropdown.classList.remove("show");
+  window.onclick = function (event) {
+    if (
+      !event.target.matches(".user-action-button") &&
+      event.target.parentNode !== userActionButton
+    ) {
+      if (userActionDropdown.classList.contains("show")) {
+        userActionDropdown.classList.remove("show");
+      }
     }
-  }
-};
+  };
+}
