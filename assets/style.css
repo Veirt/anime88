@@ -368,6 +368,7 @@ textarea.form-input {
   display: flex;
   flex-direction: column;
   flex-basis: 50%;
+  width: 50%;
 }
 
 .input-group div:first-child {
@@ -557,6 +558,9 @@ textarea.form-input {
 }
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin: 0;
   padding: 0;
   width: 300px;
@@ -572,8 +576,10 @@ textarea.form-input {
 
 .sidebar-items {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
 }
 
 .sidebar-item {
@@ -583,6 +589,7 @@ textarea.form-input {
   align-items: center;
   padding: 20px;
   gap: 10px;
+  width: 90%;
 }
 
 .sidebar-item:hover {
@@ -606,19 +613,13 @@ main.dashboard {
 }
 
 main.dashboard-form {
-  margin: 0;
-  margin-left: 340px;
-  padding: 10px 20px;
-  display: flex;
   align-items: center;
-  flex-direction: column;
-  gap: 15px;
 }
 
 .dashboard-item {
   display: flex;
   flex-direction: row;
-  flex-basis: 25%;
+  width: 25%;
   height: 80px;
   padding: 15px;
   border-radius: 8px;
@@ -647,9 +648,17 @@ main.dashboard-form {
 .dashboard-content {
   display: flex;
   width: 100%;
+  gap: 20px
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
+  .logo {
+    width: 26px;
+  }
+  .website-name {
+    font-size: x-small;
+  }
+
   .genre {
     padding: 5px;
   }
@@ -704,5 +713,59 @@ main.dashboard-form {
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  .sidebar {
+    width: 50px;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+
+  .sidebar-items {
+    align-items: center;
+  }
+
+  .sidebar-item {
+    align-items: center;
+    width: auto;
+    padding: 5px;
+  }
+
+  .sidebar h3 {
+    display: none;
+  }
+
+  main.dashboard {
+    margin-left: 70px;
+    padding: 10px 15px;
+  }
+
+  .dashboard-content {
+    flex-direction: column;
+  }
+
+  .dashboard-item-wrapper {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-item {
+    width: 90%;
+  }
+
+  .form-checkbox-chips + label {
+    padding: 0.5rem 0.5rem;
+    min-width: 45px;
+    margin: 5px;
+    font-size: 12px;
+  }
+
+  .form label {
+    font-size: small;
   }
 }

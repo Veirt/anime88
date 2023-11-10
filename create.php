@@ -116,7 +116,7 @@ if (isset($_POST["create"])) {
 	<?php $sidebar_active = "create" ?>
 	<?php include("includes/sidebar.php") ?>
 
-	<main class="dashboard-form">
+	<main class="dashboard dashboard-form">
 		<div style="width: 100%;">
 			<?php include("includes/navbar.php") ?>
 		</div>
