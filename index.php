@@ -9,6 +9,14 @@
 	<?php include("includes/navbar.php") ?>
 
 	<main>
+		<section class="search-section">
+			<div class="search-bar">
+				<form action="">
+					<input type="text" placeholder="Search..." name="search">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>
+		</section>
 		<section class="genre">
 			<div class="genre-item">
 				<img src="assets/highlights/action.avif" alt="">

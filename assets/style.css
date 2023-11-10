@@ -141,6 +141,47 @@ main {
   flex-direction: column;
 }
 
+.search-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.search-bar input[type=text] {
+  width: 600px; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--background-secondary);
+}
+.search-bar {
+  flex-grow: 1;
+}
+
+.fa fa-search {
+  color: var(--primary);
+}
+
+.search-bar form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-bar button {
+  background-color: #636a72;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-left: 10px;
+  cursor: pointer
+}
+
+.search-bar button:hover {
+  background: #2b2f39;
+}
 .genre {
   background: var(--background-secondary);
   /* width: 80%; */
