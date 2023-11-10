@@ -59,9 +59,15 @@ function check_login_status()
 			</div>
 		<?php endif ?>
 		<ul class="user-action-dropdown">
-			<li>
-				<a href="#">Profile</a>
-			</li>
+			<?php if ($_SESSION["user"]["role"] === "admin") { ?>
+				<li>
+					<a href="dashboard.php">Dashboard</a>
+				</li>
+			<?php } else { ?>
+				<li>
+					<a href="profile.php">Profile</a>
+				</li>
+			<?php } ?>
 			<li>
 				<a href="logout.php">Log out</a>
 			</li>
