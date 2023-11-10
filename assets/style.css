@@ -148,8 +148,8 @@ main {
   padding: 10px;
 }
 
-.search-bar input[type=text] {
-  width: 600px; 
+.search-bar input[type="text"] {
+  width: 600px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -176,7 +176,7 @@ main {
   border-radius: 5px;
   padding: 10px 15px;
   margin-left: 10px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .search-bar button:hover {
@@ -292,7 +292,7 @@ main {
 .form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
 }
 
 .auth {
@@ -554,6 +554,94 @@ textarea.form-input {
   border-radius: 15px;
   padding: 15px;
   color: var(--white);
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  background: var(--background-secondary);
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+}
+
+.sidebar-title {
+  margin: 20px 0;
+}
+
+.sidebar-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar-item {
+  display: flex;
+  flex-direction: row;
+  fill: var(--text);
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.sidebar-item:hover {
+  background: var(--background);
+  border-radius: 15px;
+}
+
+.sidebar-item-active {
+  background: var(--background);
+  border-radius: 15px;
+}
+
+main.dashboard {
+  margin: 0;
+  margin-left: 340px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 15px;
+}
+
+main.dashboard-form {
+  margin: 0;
+  margin-left: 340px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dashboard-item {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  height: 80px;
+  padding: 15px;
+  border-radius: 8px;
+  background: var(--background-secondary);
+  gap: 20px;
+}
+
+.dashboard-item-icon {
+  fill: var(--text);
+  width: 32px;
+}
+
+.dashboard-item-wrapper {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.dashboard-item-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
 }
 
 @media only screen and (max-width: 768px) {
