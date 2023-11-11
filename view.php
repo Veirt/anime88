@@ -97,6 +97,13 @@ function get_user_counts(int $id)
             </div>
 
             <div class="anime-content">
+                <?php if (check_role("admin")) { ?>
+                    <div style="align-self: flex-end;">
+                        <button class="btn btn-green">Update</button>
+                        <button style="margin-left: 5px;" class="btn btn-red">Delete</button>
+                    </div>
+                <?php } ?>
+
                 <div class="anime-desc">
                     <h1><?= $row['name'] ?></h1>
                     <p>
@@ -159,6 +166,7 @@ function get_user_counts(int $id)
                     <h3>Studio </h3>
                     <p><?= $row['studio'] ?></p>
                 </div>
+
             </div>
         </section>
 

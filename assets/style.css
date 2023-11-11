@@ -425,6 +425,16 @@ textarea.form-input {
   background-color: var(--accent);
 }
 
+.btn-green {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.btn-red {
+  background-color: var(--red);
+  color: var(--white);
+}
+
 .preview-anime {
   display: flex;
   flex-direction: row;
@@ -496,7 +506,6 @@ textarea.form-input {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 300px;
   background: var(--background-secondary);
   border-radius: 20px;
   padding: 20px;
@@ -517,6 +526,7 @@ textarea.form-input {
 }
 
 .genre-chip {
+  color: var(--white);
   width: auto;
   border-radius: 15px;
   background: var(--green);
@@ -727,6 +737,7 @@ main.dashboard-form {
 
   .anime-title {
     font-size: small;
+    text-align: center;
   }
 
   .form {

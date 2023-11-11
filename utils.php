@@ -109,3 +109,16 @@ function get_current_season()
         }
     }
 }
+
+function check_role(string $role)
+{
+    require("session_start.php");
+
+    // kalau belum ada session user, artinya guest (belum login)
+    if (!isset($_SESSION["user"])) {
+        return false;
+    }
+
+    // cocokkin role user yang sedang login dengan role yang diminta di parameter.
+    return $_SESSION["user"]["role"] == $role;
+}
