@@ -61,3 +61,28 @@ function show_message()
         echo "</div>";
     };
 }
+
+// ambil genre berdasarkan id yang diberikan di parameter.
+function get_genre(int $id)
+{
+    require("connection.php");
+
+    $query = "SELECT genre.name AS genres FROM anime
+    JOIN anime_genre ON anime.id = anime_genre.id_anime
+    JOIN genre ON anime_genre.id_genre = genre.id
+    WHERE anime.id = ?";
+    $stmt = $connection->prepare($query);
+    $stmt->bind_param("i", $id);
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $stmt->close();
+
+    // get all result and join them with comma
+    $genres = array();
+    while ($row = $result->fetch_assoc()) {
+        array_push($genres, $row["genres"]);
+    }
+
+    return $genres;
+}

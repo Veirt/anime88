@@ -266,18 +266,18 @@ main {
 .anime {
   margin: 10px;
   width: 250px;
-  flex-basis: 25%;
+  padding: 15px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
 }
 
-.anime a {
-  width: 250px;
-  text-overflow: ellipsis;
+.anime:hover {
+  background: var(--background-secondary);
 }
 
 .anime-title {
-  font-size: large;
+  font-size: medium;
   color: var(--text);
 }
 
@@ -287,6 +287,22 @@ main {
   box-shadow:
     0 14px 30px rgba(0, 0, 0, 0.15),
     0 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.anime-smaller {
+  width: 250px;
+}
+
+.anime-poster-smaller {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.anime-airing {
+  font-size: x-small;
+  margin: 10px 0;
 }
 
 .form {
@@ -507,6 +523,12 @@ textarea.form-input {
   margin: 3px;
 }
 
+.genre-chip-smaller {
+  margin-left: 0;
+  margin-right: 3px;
+  font-size: x-small;
+}
+
 .user-count {
   text-align: center;
   align-self: flex-start;
@@ -648,7 +670,7 @@ main.dashboard-form {
 .dashboard-content {
   display: flex;
   width: 100%;
-  gap: 20px
+  gap: 20px;
 }
 
 @media only screen and (max-width: 1024px) {
