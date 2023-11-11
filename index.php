@@ -1,4 +1,5 @@
 <?php require("session_start.php") ?>
+<?php require("utils.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,37 +73,68 @@
 				<h1>Top Anime</h1>
 				<a href="#">View All</a>
 			</div>
+
 			<div class="anime-list">
-				<div class="anime">
-					<a href="#">
-						<img class="anime-poster" src="https://m.media-amazon.com/images/M/MV5BMmI5NmFlZjItOTBhOC00NGI0LWIyNDAtODJhOTJjZDEyMTYyXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg" alt="">
-					</a>
-					<a href="#">
-						<h2 class="anime-title">Fullmetal Alchemist: Brotherhood</h2>
-					</a>
-				</div>
+				<?php
+				require("connection.php");
+				$query = "SELECT *, AVG(rating) AS avg FROM anime JOIN reviews ON anime.id = reviews.id_anime ORDER BY avg DESC LIMIT 4";
+
+				$stmt = $connection->prepare($query);
+				$stmt->execute();
+				$result = $stmt->get_result();
+				$stmt->close();
+
+				while ($row = mysqli_fetch_assoc($result)) { ?>
+					<?php $url = "view.php?id=" . $row['id']; ?>
+					<div class="anime">
+						<a href="<?= $url ?>">
+							<img class="anime-poster" src="assets/poster/<?= $row['poster'] ?>" alt="">
+						</a>
+						<a href="<?= $url ?>">
+							<h2 class="anime-title"><?= $row['name'] ?></h2>
+						</a>
+					</div>
+				<?php } ?>
 			</div>
 		</section>
 
-		<section class="anime-section">
-			<div class="anime-header">
-				<h1>Seasonal Anime</h1>
-				<a href="#">View All</a>
-			</div>
-			<div class="anime-list">
+		<?php
+		require("connection.php");
+		$current_season = get_current_season();
+		$query = "SELECT * FROM anime WHERE season = ? AND year = DATE_FORMAT(NOW(), '%Y') LIMIT 4";
 
-				<div class="anime">
-					<a href="#">
-						<img class="anime-poster" src="https://m.media-amazon.com/images/M/MV5BOGRlOGI3MjMtNTc2NS00ZWJmLThhYjAtYTkyZTUwYTMwZjk3XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg" alt="">
-					</a>
-					<a href="#">
-						<h2 class="anime-title">16 Bit Sensation</h2>
-					</a>
+		$stmt = $connection->prepare($query);
+		$stmt->bind_param("s", $current_season);
+		$stmt->execute();
+		$result = $stmt->get_result();
+		?>
+
+		<!-- Disini dicek dulu, kalo ada seasonal anime, tunjukkan sekalian satu section (termasuk title-nya) -->
+		<!-- Jadi kalo misal ga ada seasonal anime, ga bakal ditunjukkan Seasonal Anime, tapi kosong isinya. -->
+		<?php if (mysqli_num_rows($result) > 0) { ?>
+			<section class="anime-section">
+				<div class="anime-header">
+					<h1>Seasonal Anime</h1>
+					<a href="#">View All</a>
 				</div>
+				<div class="anime-list">
+					<?php
+					$stmt->close();
 
-			</div>
-		</section>
-
+					while ($row = mysqli_fetch_assoc($result)) { ?>
+						<?php $url = "view.php?id=" . $row['id']; ?>
+						<div class="anime">
+							<a href="<?= $url ?>">
+								<img class="anime-poster" src="assets/poster/<?= $row['poster'] ?>" alt="">
+							</a>
+							<a href="<?= $url ?>">
+								<h2 class="anime-title"><?= $row['name'] ?></h2>
+							</a>
+						</div>
+					<?php } ?>
+				</div>
+			</section>
+		<?php } ?>
 	</main>
 </body>
 
