@@ -184,7 +184,7 @@ main {
 }
 .genre {
   background: var(--background-secondary);
-  /* width: 80%; */
+  width: 80%;
   padding: 75px;
   display: flex;
   border-radius: 8px;
@@ -261,6 +261,7 @@ main {
 .anime-list {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .anime {
@@ -707,14 +708,21 @@ main.dashboard-form {
 
   .anime {
     flex-basis: 44%;
+    margin: 0;
+  }
+
+  .anime-smaller {
+    flex-basis: 100%;
+    align-items: center;
   }
 
   .anime-poster {
     width: 150px;
   }
 
-  .anime a {
-    width: 150px;
+  .anime-poster-smaller {
+    width: 200px;
+    height: 300px;
   }
 
   .anime-title {
