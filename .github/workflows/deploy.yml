@@ -1,5 +1,9 @@
 name: Deploy
-on: [push]
+on:
+  push:
+    branches:
+      - master
+
 jobs:
 
   build:
@@ -14,5 +18,9 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-           cd $HOME/apps/anime88 && git pull
-           cd $HOME/apps/anime88/docker && docker compose up -d --build
+           cd $HOME/apps/anime88 && git fetch origin master \
+           && git reset --hard FETCH_HEAD \
+           && git clean -df \
+           && git pull
+
+           cd $HOME/apps/anime88/docker && docker compose down && docker compose up -d --build
