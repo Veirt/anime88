@@ -56,10 +56,12 @@ function get_avg_rating(int $id)
     $result = $stmt->get_result();
     $stmt->close();
 
-    if (mysqli_num_rows($result) == 0) {
+    $avg_rating = $result->fetch_assoc()["avg"];
+
+    if ($avg_rating == 0) {
         return "-";
     } else {
-        return $result->fetch_assoc()["avg"];
+        return $avg_rating;
     }
 }
 
