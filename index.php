@@ -107,6 +107,7 @@
 		$stmt->bind_param("s", $current_season);
 		$stmt->execute();
 		$result = $stmt->get_result();
+		$stmt->close();
 		?>
 
 		<!-- Disini dicek dulu, kalo ada seasonal anime, tunjukkan sekalian satu section (termasuk title-nya) -->
@@ -119,7 +120,6 @@
 				</div>
 				<div class="anime-list">
 					<?php
-					$stmt->close();
 
 					while ($row = mysqli_fetch_assoc($result)) { ?>
 						<?php $url = "view.php?id=" . $row['id']; ?>

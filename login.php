@@ -54,8 +54,8 @@ if (isset($_POST["login"])) {
 
 	$stmt->execute();
 	$result = $stmt->get_result();
-	$row = mysqli_fetch_assoc($result); // bakal return NULL kalo ga ada username yang sesuai
 	$stmt->close();
+	$row = mysqli_fetch_assoc($result); // bakal return NULL kalo ga ada username yang sesuai
 
 	// jika username tidak ada/salah password
 	if ($row == NULL || !password_verify($password, $row['password'])) {

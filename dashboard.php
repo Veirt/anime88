@@ -12,7 +12,6 @@ function get_user_count()
     $result = $stmt->get_result();
     $stmt->close();
 
-
     return $result->fetch_assoc()["user_count"];
 }
 

@@ -15,7 +15,6 @@ function check_valid_anime_name(string $anime_name)
 	$stmt->execute();
 	$result = $stmt->get_result();
 
-
 	if (mysqli_num_rows($result) > 0) {
 		$stmt->close();
 		return false;
