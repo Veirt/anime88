@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php $title = "Anime88 - Create" ?>
+<?php $title = "Anime88 - Read" ?>
 <?php include("includes/head.php") ?>
 
 <body>
@@ -16,10 +16,15 @@
 			<?php include("includes/navbar.php") ?>
 		</div>
 
+		<!--  TODO: bagusin lagi search barnya, terus mungkin filter by genre? -->
+		<section class="search-filter">
+			<input onchange="getSearchResult()" placeholder="Search for anime..." type="text" name="name" id="anime-name" class="form-input search-bar">
+		</section>
+
 		<section class="anime-list">
 			<?php
 			require("connection.php");
-			$query = "SELECT * FROM anime";
+			$query = "SELECT * FROM anime ORDER BY name ASC";
 			$result = mysqli_execute_query($connection, $query);
 
 			while ($row = mysqli_fetch_assoc($result)) { ?>
