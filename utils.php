@@ -1,5 +1,11 @@
 <?php
 
+/*
+  Ubah biar nama file pake -, ga ada spasi dan simbol.
+  Perlu kayak gini karena akan ada anime dengan title, misal pake ":".
+  Di Windows, nama file pakai ":" ga valid, jadi biar ga kena masalah gitu,
+  diubah aja semua jadi "-"
+*/
 function sanitize_file_name(string $name)
 {
     // https://stackoverflow.com/questions/2021624/string-sanitizer-for-filename
@@ -7,12 +13,22 @@ function sanitize_file_name(string $name)
     return preg_replace('/[^a-z0-9]+/', '-', strtolower($name));
 }
 
+/*
+  Redirect ke halaman lain.
+  Cara pake: redirect("index.php"); --> akan terpindah ke page index.php
+*/
 function redirect(string $url)
 {
     echo "<script>window.location = '$url';</script>";
 }
 
 
+/*
+  Authorization untuk user yang belum login maupun yang sudah login.
+  Misal, page create.php, dashboard.php, dll. (yang hanya bisa diakses oleh ADMIN)
+  dipakein user_authorization("admin") di atas.
+  Setelah itu dicocokkan dengan role user yang sedang login.
+*/
 function user_authorization(string $role)
 {
     require("session_start.php");
@@ -29,6 +45,11 @@ function user_authorization(string $role)
     }
 }
 
+/*
+  Redirect ke halaman lain kalau udah login.
+  Misal, ada user yang sudah login, tapi dia coba akses halaman login.php.
+  Maka, dia akan di redirect ke index.php kalau dipakein function ini di atas.
+*/
 function redirect_if_logged_in()
 {
     require("session_start.php");
@@ -40,6 +61,7 @@ function redirect_if_logged_in()
 }
 
 /*
+  Buat message untuk ditampilkan di halaman lain. (makanya pake session)
   Type: success, error, warning
 */
 function create_message(string $content, string $type)
@@ -49,6 +71,9 @@ function create_message(string $content, string $type)
     $_SESSION["message"] = ["content" => $content, "type" => $type];
 }
 
+/*
+    Tampilkan message yang sudah dibuat dengan create_message()
+*/
 function show_message()
 {
     require("session_start.php");
@@ -57,8 +82,10 @@ function show_message()
         $message_type = $_SESSION["message"]["type"];
         echo " <div class='message $message_type'>";
         echo $_SESSION["message"]["content"];
-        unset($_SESSION["message"]);
         echo "</div>";
+
+        // hapus message dari session. biar ga muncul terus.
+        unset($_SESSION["message"]);
     };
 }
 
@@ -105,6 +132,9 @@ function get_current_season()
     }
 }
 
+/*
+  Function pembantu untuk mengecek role user yang sedang login.
+*/
 function check_role(string $role)
 {
     require("session_start.php");

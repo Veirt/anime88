@@ -1,5 +1,8 @@
 <?php
 
+
+// Diambil DB_HOST, DB_USER, DB_PASSWORD dari environment variable.
+// digunakan saat deploy
 $host = isset($_ENV["DB_HOST"]) ? $_ENV["DB_HOST"] : "localhost";
 $user = isset($_ENV["DB_USER"]) ? $_ENV["DB_USER"] : "root";
 $password = isset($_ENV["DB_PASSWORD"]) ? $_ENV["DB_PASSWORD"] : "";

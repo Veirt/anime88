@@ -1,3 +1,4 @@
+<!-- TODO: pas loading read.php, agak lama layar putih karena pencegahan fouc. mungkin buat loading animation nantinya -->
 <?php require("utils.php") ?>
 <?php user_authorization("admin") ?>
 

@@ -10,10 +10,12 @@
 	<?php include("includes/navbar.php") ?>
 
 	<main>
+		<!--TODO: bikin responsive, pakein class 'form-input' -->
 		<section class="search-section">
 			<div class="search-bar">
 				<form action="">
 					<input type="text" placeholder="Search..." name="search">
+					<!-- kecilin lagi icon nya, sesuaikan warnanya sama var(--text). pake fill: var(--text) -->
 					<button type="submit">
 						<svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24">
 							<path d="M20.031,20.79c0.46,0.46,1.17-0.25,0.71-0.7l-3.75-3.76c1.27-1.41,2.04-3.27,2.04-5.31
@@ -67,7 +69,7 @@
 			</div>
 		</section>
 
-
+		<!-- TODO: view all akan mengarah ke anime.php sesuai dengan section-->
 		<section class="anime-section">
 			<div class="anime-header">
 				<h1>Top Anime</h1>

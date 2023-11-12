@@ -52,6 +52,7 @@ if (isset($_POST["register"])) {
 	<?php include("includes/navbar.php") ?>
 
 	<main>
+		<!-- TODO: bikin password confirmation kalo mau -->
 		<form class="form auth" action="" method="post">
 			<div class="section-title">Register</div>
 			<?php if (isset($_SESSION["message"])) { ?>

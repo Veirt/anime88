@@ -3,6 +3,9 @@
 require("../utils.php");
 require("../connection.php");
 
+// TODO: filter berdasarkan genre. bisa multiple genre
+// TODO: sorting berdasarkan avg rating, name
+
 $name = isset($_GET["name"]) ? $_GET["name"] : "";
 $sort = isset($_GET["sort"]) ? $_GET["sort"] : "asc";
 

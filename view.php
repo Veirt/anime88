@@ -84,7 +84,9 @@ function get_user_counts(int $id)
             <div class="anime-content">
                 <?php if (check_role("admin")) { ?>
                     <div style="align-self: flex-end;">
+                        <!-- TODO: update. Arahin ke update.php?id=...-->
                         <button class="btn btn-green">Update</button>
+                        <!-- TODO: Delete. Arahin ke delete.php?id=...-->
                         <button style="margin-left: 5px;" class="btn btn-red">Delete</button>
                     </div>
                 <?php } ?>
@@ -95,6 +97,7 @@ function get_user_counts(int $id)
                         <?= $row['synopsis'] ?>
                     </p>
                 </div>
+                <!-- TODO: tambahin lagi selain avg rating. bagusin lagi select option nya. -->
                 <div class="anime-stat">
                     <div class="anime-rank">
                         <h3>Score</h3>
