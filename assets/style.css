@@ -684,6 +684,20 @@ main.dashboard-form {
   gap: 20px;
 }
 
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+}
+
+td {
+  line-height: 1.5em;
+}
+
 @media only screen and (max-width: 1024px) {
   .logo {
     width: 26px;
