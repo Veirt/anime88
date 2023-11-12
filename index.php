@@ -78,11 +78,7 @@
 				<?php
 				require("connection.php");
 				$query = "SELECT *, AVG(rating) AS avg FROM anime JOIN reviews ON anime.id = reviews.id_anime ORDER BY avg DESC LIMIT 4";
-
-				$stmt = $connection->prepare($query);
-				$stmt->execute();
-				$result = $stmt->get_result();
-				$stmt->close();
+				$result = mysqli_execute_query($connection, $query);
 
 				while ($row = mysqli_fetch_assoc($result)) { ?>
 					<?php $url = "view.php?id=" . $row['id']; ?>
@@ -102,12 +98,7 @@
 		require("connection.php");
 		$current_season = get_current_season();
 		$query = "SELECT * FROM anime WHERE season = ? AND year = DATE_FORMAT(NOW(), '%Y') LIMIT 4";
-
-		$stmt = $connection->prepare($query);
-		$stmt->bind_param("s", $current_season);
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$stmt->close();
+		$result = mysqli_execute_query($connection, $query, [$current_season]);
 		?>
 
 		<!-- Disini dicek dulu, kalo ada seasonal anime, tunjukkan sekalian satu section (termasuk title-nya) -->

@@ -20,10 +20,7 @@
 			<?php
 			require("connection.php");
 			$query = "SELECT * FROM anime";
-			$stmt = $connection->prepare($query);
-			$stmt->execute();
-			$result = $stmt->get_result();
-			$stmt->close();
+			$result = mysqli_execute_query($connection, $query);
 
 			while ($row = mysqli_fetch_assoc($result)) { ?>
 				<?php $url = "view.php?id=" . $row['id']; ?>

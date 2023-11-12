@@ -12,12 +12,7 @@ if (!isset($_GET["id"])) {
     $id = $_GET["id"];
 
     $query = "SELECT * FROM anime WHERE id = ?";
-    $stmt = $connection->prepare($query);
-    $stmt->bind_param("i", $id);
-
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $stmt->close();
+    $result = mysqli_execute_query($connection, $query, [$id]);
 
     if (mysqli_num_rows($result) < 1) {
         create_message("Anime dengan id $id tidak ada.", "error");
@@ -49,13 +44,7 @@ function get_avg_rating(int $id)
     require("connection.php");
 
     $query = "SELECT ROUND(AVG(rating), 2) AS avg FROM anime JOIN reviews ON anime.id = reviews.id_anime WHERE anime.id = ?";
-    $stmt = $connection->prepare($query);
-    $stmt->bind_param("i", $id);
-
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $stmt->close();
-
+    $result = mysqli_execute_query($connection, $query, [$id]);
     $avg_rating = $result->fetch_assoc()["avg"];
 
     if ($avg_rating == 0) {
@@ -70,12 +59,8 @@ function get_user_counts(int $id)
     require("connection.php");
 
     $query = "SELECT COUNT(*) AS count FROM reviews WHERE id_anime = ?";
-    $stmt = $connection->prepare($query);
-    $stmt->bind_param("i", $id);
+    $result = mysqli_execute_query($connection, $query, [$id]);
 
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $stmt->close();
     return $result->fetch_assoc()["count"];
 }
 

@@ -8,19 +8,12 @@ function check_valid_anime_name(string $anime_name)
 	require("connection.php");
 
 	$query = "SELECT * FROM anime WHERE name = ?";
-	$stmt = $connection->prepare($query);
-
-	$stmt->bind_param("s", $anime_name);
-
-	$stmt->execute();
-	$result = $stmt->get_result();
+	$result = mysqli_execute_query($connection, $query, [$anime_name]);
 
 	if (mysqli_num_rows($result) > 0) {
-		$stmt->close();
 		return false;
 	}
 
-	$stmt->close();
 	return true;
 }
 
@@ -76,27 +69,21 @@ if (isset($_POST["create"])) {
 	}
 
 	$query = "INSERT INTO anime (name, synopsis, episodes, status, season, year, studio, poster) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-	$stmt = $connection->prepare($query);
-	$stmt->bind_param("ssisssss", $name, $synopsis, $episodes, $status, $season, $year, $studio, $target_file_name);
+	$result = mysqli_execute_query($connection, $query, [$name, $synopsis, $episodes, $status, $season, $year, $studio, $target_file_name]);
 
-	if (!$stmt->execute()) {
-		$stmt->close();
+	if ($result === false) {
 		create_message("Gagal menambahkan anime.", "error");
 		redirect("create.php");
 		exit;
 	}
 
-	$stmt->close();
 
 	$id_anime = $connection->insert_id;
 	$genres = $_POST["genre"];
 
 	foreach ($genres as $genre) {
 		$query = "INSERT INTO anime_genre (id_anime, id_genre) VALUES (?, ?)";
-		$stmt = $connection->prepare($query);
-		$stmt->bind_param("ii", $id_anime, $genre);
-		$stmt->execute();
-		$stmt->close();
+		mysqli_execute_query($connection, $query, [$id_anime, $genre]);
 	}
 
 	echo "<script>alert('Berhasil menambahkan anime!');</script>";
@@ -141,7 +128,7 @@ if (isset($_POST["create"])) {
 			<div class="checkbox-group">
 				<?php
 				$query = "SELECT * FROM genre ORDER BY name ASC";
-				$result = $connection->query($query);
+				$result = mysqli_execute_query($connection, $query);
 				while ($row = $result->fetch_assoc()) {
 					$genre = $row["name"];
 					$id = $row["id"];

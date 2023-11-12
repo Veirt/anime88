@@ -8,12 +8,7 @@ require("connection.php");
 function check_valid_username(mysqli $connection, string $username)
 {
 	$query = "SELECT * FROM users WHERE username = ?";
-	$stmt = $connection->prepare($query);
-	$stmt->bind_param("s", $username);
-
-	$stmt->execute();
-	$result = $stmt->get_result();
-	$stmt->close();
+	$result = mysqli_execute_query($connection, $query, [$username]);
 
 	return mysqli_num_rows($result) < 1;
 }
@@ -31,15 +26,12 @@ if (isset($_POST["register"])) {
 	$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 	$query = "INSERT INTO users (username, password) VALUES (?, ?)";
-	$stmt = $connection->prepare($query);
-	$stmt->bind_param("ss", $username, $hashed_password);
+	$result = mysqli_execute_query($connection, $query, [$username, $hashed_password]);
 
-	if ($stmt->execute()) {
-		$stmt->close();
+	if ($result) {
 		create_message("Register berhasil dilakukan.", "success");
 		redirect("login.php");
 	} else {
-		$stmt->close();
 		create_message("Register gagal.", "error");
 		redirect("register.php");
 	}

@@ -7,10 +7,7 @@ function get_user_count()
     require('connection.php');
 
     $query = "SELECT COUNT(*) AS user_count FROM users";
-    $stmt = $connection->prepare($query);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $stmt->close();
+    $result = mysqli_execute_query($connection, $query);
 
     return $result->fetch_assoc()["user_count"];
 }
@@ -20,11 +17,7 @@ function get_anime_count()
     require('connection.php');
 
     $query = "SELECT COUNT(*) AS anime_count FROM anime";
-    $stmt = $connection->prepare($query);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $stmt->close();
-
+    $result = mysqli_execute_query($connection, $query);
 
     return $result->fetch_assoc()["anime_count"];
 }
@@ -34,11 +27,7 @@ function get_review_count()
     require('connection.php');
 
     $query = "SELECT COUNT(*) AS review_count FROM reviews";
-    $stmt = $connection->prepare($query);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $stmt->close();
-
+    $result = mysqli_execute_query($connection, $query);
 
     return $result->fetch_assoc()["review_count"];
 }

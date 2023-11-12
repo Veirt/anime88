@@ -71,12 +71,7 @@ function get_genre(int $id)
     JOIN anime_genre ON anime.id = anime_genre.id_anime
     JOIN genre ON anime_genre.id_genre = genre.id
     WHERE anime.id = ?";
-    $stmt = $connection->prepare($query);
-    $stmt->bind_param("i", $id);
-
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $stmt->close();
+    $result = mysqli_execute_query($connection, $query, ["$id"]);
 
     // get all result and join them with comma
     $genres = array();

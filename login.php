@@ -49,12 +49,8 @@ if (isset($_POST["login"])) {
 	$remember_username = isset($_POST["remember-username"]);
 
 	$query = "SELECT * FROM users WHERE username = ?";
-	$stmt = $connection->prepare($query);
-	$stmt->bind_param("s", $username);
+	$result = mysqli_execute_query($connection, $query, [$username]);
 
-	$stmt->execute();
-	$result = $stmt->get_result();
-	$stmt->close();
 	$row = mysqli_fetch_assoc($result); // bakal return NULL kalo ga ada username yang sesuai
 
 	// jika username tidak ada/salah password
