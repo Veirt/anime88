@@ -553,17 +553,6 @@ textarea.form-input {
   background-color: var(--background);
 }
 
-.welcome-user {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.welcome-user h1 {
-  font-size: xx-large;
-  font-weight: bold;
-}
-
 .genre-main {
   padding: 0px 0px;
 }
@@ -684,18 +673,72 @@ main.dashboard-form {
   gap: 20px;
 }
 
-tbody {
-  display: table-row-group;
-  vertical-align: middle;
+.welcome-user {
+  text-align: center;
+  padding: 10px;
 }
 
-tr {
-  display: table-row;
-  vertical-align: inherit;
+.welcome-user h1 {
+  font-size: xx-large;
+  font-weight: bold;
 }
 
-td {
-  line-height: 1.5em;
+.list-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.list-title h1 {
+  font-size: 20px;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.total-rated p {
+  font-size: 16px;
+  margin: 0;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header {
+  font-weight: bold;
+}
+
+.table-list {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.table-list th, .table-list td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.table-list th.title,
+.table-list td.title {
+    width: 100%;
+}
+
+.table-list td.table-image img {
+  width: 100px; 
+  height: auto; 
+}
+
+.list-data {
+  border: 1px solid #ccc;
+}
+
+.list-data td {
+  padding: 10px;
 }
 
 @media only screen and (max-width: 1024px) {
