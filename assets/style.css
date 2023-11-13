@@ -278,6 +278,14 @@ main {
   color: var(--text);
 }
 
+.anime-five-col {
+  width: 1500px;
+}
+
+.anime-five-col > div {
+  flex-basis: 15%;
+}
+
 .anime-poster {
   width: 250px;
   border-radius: 10px;

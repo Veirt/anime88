@@ -27,8 +27,7 @@ if (isset($_GET["name"])) {
             </button>
         </form>
 
-        <!-- TODO: bagusin lagi layoutnya -->
-        <section class="anime-list">
+        <section class="anime-list anime-five-col">
 
         </section>
     </main>
