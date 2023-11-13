@@ -14,7 +14,7 @@
 		<section class="search-section">
 			<div class="search-bar form-input">
 				<form action="">
-					<input type="text" placeholder="Search..." name="search">
+					<input type="text" placeholder="Search..." name="search" class="form-input">
 					<!-- kecilin lagi icon nya, sesuaikan warnanya sama var(--text). pake fill: var(--text) -->
 					<button type="submit">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">

@@ -16,6 +16,13 @@ function check_valid_username(mysqli $connection, string $username)
 if (isset($_POST["register"])) {
 	$username = $_POST["username"];
 	$password = $_POST["password"];
+	$confirm_password = $_POST["confirm_password"];
+
+	if ($password !== $confirm_password) {
+        create_message("Password dan Konfirmasi Password tidak sama!", "error");
+        redirect("register.php");
+        exit;
+    }
 
 	if (!check_valid_username($connection, $username)) {
 		create_message("Username telah digunakan!", "error");
@@ -66,6 +73,9 @@ if (isset($_POST["register"])) {
 
 			<label for="password">Password</label>
 			<input required placeholder="Enter your password" class="form-input" type="password" name="password" id="password">
+
+			<label for="confirm_password">Confirm Password</label>
+			<input required placeholder="Confirm your password" class="form-input" type="password" name="confirm_password" id="confirm_password">
 
 			<input style="margin-top: 30px;" class="btn" type="submit" name="register" value="Register">
 		</form>
