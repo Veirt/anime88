@@ -823,4 +823,17 @@ td {
   .form label {
     font-size: small;
   }
+
+  .search-bar {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .search-bar input[type="text"] {
+    width: 100%;
+  }
+
+  .search-bar button {
+    width: 20%;
+  }
 }
