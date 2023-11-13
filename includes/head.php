@@ -8,21 +8,24 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="manifest" href="assets/site.webmanifest">
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script defer async src="assets/js/script.js"></script>
-
-    <style>
-        .no-fouc {
-            display: none;
+    <script defer async>
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme) {
+            document.documentElement.setAttribute("data-theme", currentTheme);
+        } else {
+            document.documentElement.setAttribute("data-theme", "dark");
         }
-    </style>
 
-    <script type="text/javascript">
-        document.documentElement.className = 'no-fouc';
-        $(window).on("load", function() {
-            $('.no-fouc').removeClass('no-fouc');
-        });
+        function switchTheme() {
+            if (document.documentElement.getAttribute("data-theme") === "dark") {
+                document.documentElement.setAttribute("data-theme", "light");
+                localStorage.setItem("theme", "light");
+            } else {
+                document.documentElement.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+            }
+        }
     </script>
-
+    <script defer async src="assets/js/script.js"></script>
 
 </head>
