@@ -28,7 +28,6 @@ if (isset($_GET["name"])) {
         </form>
 
         <section class="anime-list anime-five-col">
-
         </section>
     </main>
 
