@@ -85,9 +85,9 @@ function get_user_counts(int $id)
                 <?php if (check_role("admin")) { ?>
                     <div style="align-self: flex-end;">
                         <!-- TODO: update. Arahin ke update.php?id=...-->
-                        <button class="btn btn-green">Update</button>
+                        <a href="update.php?id=<?= $id ?>" class="btn btn-green">Update</a>
                         <!-- TODO: Delete. Arahin ke delete.php?id=...-->
-                        <button style="margin-left: 5px;" class="btn btn-red">Delete</button>
+                        <a href="delete.php?id=<?= $id ?>" class="btn btn-red" onclick="return confirm('Are you sure you want to delete this anime?')">Delete</a>
                     </div>
                 <?php } ?>
 
