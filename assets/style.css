@@ -288,9 +288,7 @@ main {
 .anime-poster {
   width: 250px;
   border-radius: 10px;
-  box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.15),
-    0 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
 .anime-smaller {
@@ -456,9 +454,7 @@ textarea.form-input {
   width: 325px;
   object-position: center;
   object-fit: cover;
-  box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.15),
-    0 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
 .poster-anime:hover {
@@ -690,72 +686,89 @@ main.dashboard-form {
   gap: 20px;
 }
 
-.welcome-user {
-  text-align: center;
-  padding: 10px;
+.profile-main {
+  display: flex;
+  flex-direction: row;
 }
 
-.welcome-user h1 {
-  font-size: xx-large;
-  font-weight: bold;
-}
-
-.list-card {
-  border: 1px solid #ccc;
+.profile-user {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   border-radius: 5px;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 15px;
 }
 
-.list-title h1 {
-  font-size: 20px;
-  margin: 0 0 10px;
-  padding: 0;
+.profile-user h1 {
+  text-align: center;
+  padding: 25px;
+}
+
+.profile-picture {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.profile-pic {
+  width: 100%;
+  height: 50%;
+  fill: var(--text);
+}
+
+.total-rated {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 25%;
+  background: var(--background-secondary);
+  border-radius: 5px;
 }
 
 .total-rated p {
-  font-size: 16px;
-  margin: 0;
+  margin: 20px 0;
 }
 
-table {
+.rated-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 2%;
+}
+
+.rated-card {
+  display: flex;
+  flex-direction: row;
   width: 100%;
-  border-collapse: collapse;
+  background: var(--background-secondary);
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.table-header {
-  font-weight: bold;
+.rated-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
 }
 
-.table-list {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: center;
+.rated-poster {
+  flex: 0 0 85px;
 }
-
-.table-list th,
-.table-list td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-}
-
-.table-list th.title,
-.table-list td.title {
+.rated-poster img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.table-list td.table-image img {
-  width: 100px;
-  height: auto;
-}
-
-.list-data {
-  border: 1px solid #ccc;
-}
-
-.list-data td {
-  padding: 10px;
+.rated-number,
+.rated-title,
+.rated-rate {
+  margin-bottom: 10px;
 }
 
 .icon {
