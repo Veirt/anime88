@@ -737,7 +737,6 @@ main.dashboard-form {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  padding: 2%;
 }
 
 .rated-card {
@@ -817,7 +816,7 @@ main.dashboard-form {
   flex-direction: column;
   width: 100%;
   border-radius: 5px;
-  padding: 15px;
+  padding: 0;
 }
 
 .profile-user h1 {
@@ -1034,5 +1033,22 @@ main.dashboard-form {
 
   .search-bar button {
     width: 20%;
+  }
+
+  .profile-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-user {
+    align-items: center;
+  }
+
+  .profile-pic {
+    width: 100px;
+  }
+
+  .total-rated {
+    width: 50%;
   }
 }
