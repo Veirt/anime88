@@ -1,6 +1,7 @@
-<!-- TODO: pas loading read.php, agak lama layar putih karena pencegahan fouc. mungkin buat loading animation nantinya -->
+<?php require("session_start.php") ?>
 <?php require("utils.php") ?>
 <?php user_authorization("admin") ?>
+<!-- TODO: pas loading read.php, agak lama layar putih karena pencegahan fouc. mungkin buat loading animation nantinya -->
 
 <!DOCTYPE html>
 <html lang="en">
