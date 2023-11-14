@@ -1084,7 +1084,6 @@ main.dashboard-form {
   }
 
   .search-filter {
-    width: 100%;
     flex-direction: column;
   }
 }
