@@ -24,6 +24,12 @@ if (isset($_POST["register"])) {
 		exit;
 	}
 
+	if (strpos($username, ' ') !== false) {
+		create_message("Username tidak boleh ada spasi!", "error");
+		redirect("register.php");
+		exit;
+	}
+
 	if (!check_valid_username($connection, $username)) {
 		create_message("Username telah digunakan!", "error");
 		redirect("register.php");
