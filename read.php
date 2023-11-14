@@ -21,6 +21,12 @@ if (isset($_GET["name"])) {
 	<main class="dashboard">
 		<div style="width: 100%;">
 			<?php include("includes/navbar.php") ?>
+			<div style="margin-top: 10px;">
+			<?php
+			show_message();
+			?>
+		</div>
+			
 		</div>
 
 		<!--  TODO: mungkin filter by genre? -->
