@@ -4,7 +4,23 @@
 
 
 <?php
+// Function untuk ngecek apakah user udah pernah ngereview anime ini atau belum.
+function check_already_reviewed(int $anime_id, int $user_id)
+{
+    require("connection.php");
 
+    $query = "SELECT * FROM reviews WHERE id_anime = ? AND id_user = ?";
+    $result = mysqli_execute_query($connection, $query, [$anime_id, $user_id]);
+
+    // kalo hasilnya lebih dari 0, berarti sudah review.
+    if (mysqli_num_rows($result) > 0) {
+        return true;
+    }
+    return false;
+}
+?>
+
+<?php
 if (!isset($_GET["id"])) {
     create_message("Cara pengaksesan view salah!", "error");
     $title = "Anime88 - Error";
@@ -20,14 +36,57 @@ if (!isset($_GET["id"])) {
     } else {
         $row = $result->fetch_assoc();
 
+        $anime_id = $row['id'];
         $anime_name = $row['name'];
         $poster_path = $row['poster'];
         $title = "Anime88 - $anime_name";
     }
 }
 
+if (isset($_POST["review"])) {
+    $rating = $_POST["rating"];
+    $comment = $_POST["comment"];
+    $user_id = $_SESSION["user"]["id"];
 
+    if (check_already_reviewed($anime_id, $_SESSION["user"]["id"])) {
+        // UPDATE
+        $query = "UPDATE reviews SET rating = ?, comment = ? WHERE id_anime = ? AND id_user = ?";
+        $result = mysqli_execute_query($connection, $query, [$rating, $comment, $anime_id, $user_id]);
 
+        if (!$result) {
+            create_message("Gagal mengupdate review.", "error");
+            redirect("view.php?id=$anime_id");
+        } else {
+            create_message("Berhasil mengupdate review.", "success");
+            redirect("view.php?id=$anime_id");
+        }
+    } else {
+        // INSERT
+        $query = "INSERT INTO reviews (id_user, id_anime, rating, comment) VALUES (?, ?, ?, ?)";
+        $result = mysqli_execute_query($connection, $query, [$user_id, $anime_id, $rating, $comment]);
+        if (!$result) {
+            create_message("Gagal menambah review.", "error");
+            redirect("view.php?id=$anime_id");
+        } else {
+            create_message("Berhasil menambah review.", "success");
+            redirect("view.php?id=$anime_id");
+        }
+    }
+    exit();
+}
+
+if (isset($_POST["review-delete"])) {
+    $query = "DELETE FROM reviews WHERE id_anime = ? AND id_user = ?";
+    $result = mysqli_execute_query($connection, $query, [$anime_id, $_SESSION["user"]["id"]]);
+    if (!$result) {
+        create_message("Gagal menghapus review.", "error");
+        redirect("view.php?id=$anime_id");
+    } else {
+        create_message("Berhasil menghapus review.", "success");
+        redirect("view.php?id=$anime_id");
+    }
+    exit();
+}
 ?>
 
 
@@ -54,7 +113,7 @@ function get_avg_rating(int $id)
     }
 }
 
-function get_user_counts(int $id)
+function get_user_rated_count(int $id)
 {
     require("connection.php");
 
@@ -92,13 +151,10 @@ function get_anime_ranking(int $id)
 
 <body>
     <?php include("includes/navbar.php") ?>
+    <div style="width: 90%; margin: 10px auto">
+        <?php show_message(); ?>
+    </div>
     <main>
-        <?php
-        if (isset($_SESSION["message"])) {
-            show_message();
-            exit();
-        }
-        ?>
 
         <section class="preview-anime">
             <div class="anime-info">
@@ -168,8 +224,8 @@ function get_anime_ranking(int $id)
                     </div>
 
                     <div class="anime-stat-item anime-stat-users">
-                        <h3>Reviewed</h3>
-                        <h4><?= get_user_counts($id) ?> User(s)</h4>
+                        <h3>Rated</h3>
+                        <h4><?= get_user_rated_count($id) ?> User(s)</h4>
                     </div>
 
 
@@ -219,15 +275,53 @@ function get_anime_ranking(int $id)
                             </div>
                         </div>
                     <?php } ?>
-
-
-
                 </div>
 
+                <div style="margin-top: 15px">
+                    <?php if (check_role("user")) { ?>
+                        <?php if (check_already_reviewed($id, $_SESSION["user"]["id"])) { ?>
+                            <button id="open-modal" class="btn btn-blue">Edit review</button>
+                        <?php } else { ?>
+                            <button id="open-modal" class="btn btn-green">Add review</button>
+                        <?php } ?>
+                    <?php } ?>
+                </div>
             </div>
         </section>
 
     </main>
+
+    <div id="review-modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <?php
+            $query = "SELECT * FROM reviews WHERE id_anime = ? AND id_user = ?";
+            $result = mysqli_execute_query($connection, $query, [$anime_id, $_SESSION["user"]["id"]]);
+
+            $row = mysqli_fetch_assoc($result);
+
+
+            ?>
+            <span class="close">&times;</span>
+            <form style="width: 90%" class="form" action="" method="POST">
+                <h2><?= $anime_name ?></h2>
+                <label for="rating">Rating</label>
+                <input value="<?= isset($row) ? $row['rating'] : '' ?>" required class="form-input" type="number" min="1" max="10" name="rating" id="rating">
+
+                <label for="comment">Komentar</label>
+                <textarea class="form-input" type="text" name="comment" rows="10" id="comment"><?= isset($row) ? $row['comment'] : '' ?></textarea>
+
+                <div style="display: flex; justify-content: center; gap: 10px">
+                    <button style="margin-top: 15px" name="review" class="btn btn-green" type="submit">Submit</button>
+                    <?php if (check_already_reviewed($anime_id, $_SESSION["user"]["id"])) { ?>
+                        <button style="margin-top: 15px" name="review-delete" class="btn btn-red" type="submit">Delete</button>
+                    <?php } ?>
+                </div>
+            </form>
+        </div>
+
+    </div>
 
 </body>
 

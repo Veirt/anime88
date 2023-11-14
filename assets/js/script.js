@@ -49,3 +49,24 @@ if (userActionButton && userActionDropdown) {
     }
   };
 }
+
+const reviewModal = document.getElementById("review-modal");
+
+if (reviewModal) {
+  const openModal = document.getElementById("open-modal");
+  const span = document.querySelector(".close");
+
+  openModal.onclick = function () {
+    reviewModal.style.display = "block";
+  };
+
+  span.onclick = function () {
+    reviewModal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == reviewModal) {
+      reviewModal.style.display = "none";
+    }
+  };
+}
