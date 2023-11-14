@@ -764,7 +764,7 @@ main.dashboard-form {
   align-items: center;
   border-radius: 5px;
   padding: 15px;
- }
+}
 
 .profile-pic {
   width: 70%;
@@ -899,7 +899,6 @@ main.dashboard-form {
     width: 100%;
   }
 
-
   .anime-poster-smaller {
     width: 200px;
     height: 300px;
@@ -1004,5 +1003,14 @@ main.dashboard-form {
 
   .total-rated {
     width: 100%;
+  }
+
+  .anime-stat {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .anime-stat-item {
+    width: 90%;
   }
 }
