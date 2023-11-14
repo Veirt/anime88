@@ -19,10 +19,10 @@ if (isset($_POST["register"])) {
 	$confirm_password = $_POST["confirm_password"];
 
 	if ($password !== $confirm_password) {
-        create_message("Password dan Konfirmasi Password tidak sama!", "error");
-        redirect("register.php");
-        exit;
-    }
+		create_message("Password dan Konfirmasi Password tidak sama!", "error");
+		redirect("register.php");
+		exit;
+	}
 
 	if (!check_valid_username($connection, $username)) {
 		create_message("Username telah digunakan!", "error");
@@ -59,7 +59,6 @@ if (isset($_POST["register"])) {
 	<?php include("includes/navbar.php") ?>
 
 	<main>
-		<!-- TODO: bikin password confirmation kalo mau -->
 		<form class="form auth" action="" method="post">
 			<div class="section-title">Register</div>
 			<?php if (isset($_SESSION["message"])) { ?>

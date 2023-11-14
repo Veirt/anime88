@@ -194,9 +194,7 @@ function get_anime_ranking(int $id)
                     <div class="more-info">
                         <h2 style="margin-bottom: 10px">Actions</h2>
                         <div style="display: flex;  align-self: flex-start; gap: 15px">
-                            <!-- TODO: update. Arahin ke update.php?id=...-->
                             <a href="update.php?id=<?= $id ?>" class="btn btn-green">Update</a>
-                            <!-- TODO: Delete. Arahin ke delete.php?id=...-->
                             <a href="delete.php?id=<?= $id ?>" class="btn btn-red" onclick="return confirm('Are you sure you want to delete this anime?')">Delete</a>
                         </div>
 
@@ -211,7 +209,6 @@ function get_anime_ranking(int $id)
                         <?= $row['synopsis'] ?>
                     </p>
                 </div>
-                <!-- TODO: tambahin lagi selain avg rating. bagusin lagi select option nya. -->
                 <div class="anime-stat">
                     <div class="anime-stat-item anime-stat-score">
                         <h3>Score</h3>
