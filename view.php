@@ -161,7 +161,6 @@ function get_anime_ranking(int $id)
 
             // hapus message dari session. biar ga muncul terus.
             unset($_SESSION["message"]);
-            exit();
         };
         ?>
     </div>
