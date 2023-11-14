@@ -64,7 +64,7 @@
 		<section class="anime-section">
 			<div class="anime-header">
 				<h1>Top Anime</h1>
-				<a href="#">View All</a>
+				<a href="anime.php?key=avg_rating&order=desc">View All</a>
 			</div>
 
 			<div class="anime-list">
@@ -100,7 +100,7 @@
 			<section class="anime-section">
 				<div class="anime-header">
 					<h1>Seasonal Anime</h1>
-					<a href="#">View All</a>
+					<a href="anime.php?season=<?= get_current_season() ?>&year=<?= date('Y') ?>">View All</a>
 				</div>
 				<div class="anime-list">
 					<?php

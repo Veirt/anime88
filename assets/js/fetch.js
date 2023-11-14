@@ -1,8 +1,14 @@
 async function fetchAnime() {
+  // Ambil parameter dari URL
+  let currentParams = new URL(document.location).searchParams;
   const animeName = document.getElementById("anime-name").value;
-  const params = new URLSearchParams({ name: animeName });
-  const response = await fetch("api/anime.php?" + params);
 
+  // prefer dari input
+  currentParams.set("name", animeName);
+
+  const apiUrl = "api/anime.php" + "?" + currentParams.toString();
+
+  const response = await fetch(apiUrl);
   return response.text();
 }
 
