@@ -279,7 +279,8 @@ main {
 }
 
 .anime-five-col {
-  width: 1500px;
+  display: flex;
+  justify-content: center;
 }
 
 .anime-five-col > div {
@@ -288,6 +289,8 @@ main {
 
 .anime-poster {
   width: 250px;
+  height: 350px;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow:
     0 14px 30px rgba(0, 0, 0, 0.15),
@@ -719,7 +722,7 @@ main.dashboard-form {
   flex-direction: column;
   display: flex;
   max-height: 320px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .review-entry {
@@ -752,7 +755,7 @@ main.dashboard-form {
 .profile-main {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 90%;
 }
 
 .profile-user {
@@ -867,9 +870,19 @@ main.dashboard-form {
     width: 95%;
   }
 
+  .anime-list {
+    display: flex;
+    justify-content: center;
+  }
+
   .anime {
-    flex-basis: 44%;
+    flex-basis: 40%;
+    align-items: center;
     margin: 0;
+  }
+
+  .anime-five-col {
+    width: 100%;
   }
 
   .anime-smaller {
@@ -980,10 +993,12 @@ main.dashboard-form {
   .profile-main {
     flex-direction: column;
     align-items: center;
+    width: 90%;
   }
 
   .profile-user {
     align-items: center;
+    width: 100%;
   }
 
   .profile-pic {
@@ -991,6 +1006,6 @@ main.dashboard-form {
   }
 
   .total-rated {
-    width: 50%;
+    width: 100%;
   }
 }

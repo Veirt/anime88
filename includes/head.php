@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="manifest" href="assets/site.webmanifest">
 
-    <script defer async>
+    <script defer>
         const currentTheme = localStorage.getItem("theme");
         if (currentTheme) {
             document.documentElement.setAttribute("data-theme", currentTheme);
@@ -26,6 +26,6 @@
             }
         }
     </script>
-    <script defer async src="assets/js/script.js"></script>
+    <script defer src="assets/js/script.js"></script>
 
 </head>
