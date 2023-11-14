@@ -78,7 +78,7 @@ if (isset($_GET["id"])) {
             <input required class="form-input" type="text" name="anime-name" id="anime-name" value="<?= isset($anime_data) ? $anime_data["name"] : '' ?>">
 
             <label for="synopsis">Sinopsis</label>
-            <textarea required class="form-input" type="text" name="synopsis" id="synopsis"><?= isset($anime_data) ? $anime_data["synopsis"] : '' ?></textarea>
+            <textarea required class="form-input" type="text" rows="15" name="synopsis" id="synopsis"><?= isset($anime_data) ? $anime_data["synopsis"] : '' ?></textarea>
 
             <label for="episodes">Jumlah Episode</label>
             <input required class="form-input" type="number" name="episodes" id="episodes" value="<?= isset($anime_data) ? $anime_data["episodes"] : '' ?>">
