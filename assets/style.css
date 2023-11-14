@@ -151,19 +151,12 @@ main {
   padding: 10px;
 }
 
-.search-bar input[type="text"] {
+.search-bar {
   width: 600px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: var(--background-secondary);
-}
-.search-bar {
-  flex-grow: 1;
-}
-
-.fa fa-search {
-  color: var(--primary);
 }
 
 .search-bar form {
@@ -285,10 +278,20 @@ main {
   color: var(--text);
 }
 
+.anime-five-col {
+  width: 1500px;
+}
+
+.anime-five-col > div {
+  flex-basis: 15%;
+}
+
 .anime-poster {
   width: 250px;
   border-radius: 10px;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
 .anime-smaller {
@@ -454,7 +457,9 @@ textarea.form-input {
   width: 325px;
   object-position: center;
   object-fit: cover;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
 .poster-anime:hover {
@@ -774,6 +779,23 @@ main.dashboard-form {
   fill: var(--text);
 }
 
+.search-filter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.search-button {
+  cursor: pointer;
+  border: none;
+  height: 100%;
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--background-secondary);
+  height: 45px;
+}
+
 .reviews {
   padding: 15px;
   border-radius: 8px;
@@ -832,7 +854,7 @@ main.dashboard-form {
 .profile-pic {
   width: 100%;
   height: 50%;
-  fill: var(--text)
+  fill: var(--text);
 }
 
 .total-rated {
@@ -850,7 +872,6 @@ main.dashboard-form {
 
 .total-rated p {
   margin: 20px 0;
-
 }
 
 .rated-container {
@@ -889,9 +910,8 @@ main.dashboard-form {
 .rated-number,
 .rated-title,
 .rated-rate {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
-
 
 @media only screen and (max-width: 1024px) {
   .logo {
