@@ -3,8 +3,8 @@ require("utils.php");
 user_authorization("admin");
 require("connection.php");
 
-if (isset($_GET["edit"])) {
-    $edit_id = $_GET["edit"];
+if (isset($_GET["id"])) {
+    $edit_id = $_GET["id"];
     $query = "SELECT * FROM anime WHERE id = ?";
     $result = mysqli_execute_query($connection, $query, [$edit_id]);
     $anime_data = $result->fetch_assoc();
@@ -138,7 +138,7 @@ if (isset($_GET["edit"])) {
 
             <label for="poster">Poster</label>
             <input class="form-input" type="file" accept="image/*" name="poster" id="poster" onchange="previewPoster(this)">
-            <div style="visibility: hidden;" class="preview-wrapper">
+            <div class="preview-wrapper">
                 <img id="poster-preview" class="preview" src="<?= isset($anime_data) ? 'assets/poster/' . $anime_data["poster"] : '' ?>">
             </div>
 
