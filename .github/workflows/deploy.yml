@@ -5,22 +5,23 @@ on:
       - master
 
 jobs:
-
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using ssh key
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-           cd $HOME/apps/anime88 && git fetch origin master \
-           && git reset --hard FETCH_HEAD \
-           && git clean -df \
-           && git pull
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd $HOME/apps/anime88 && git fetch origin master \
+            && git reset --hard FETCH_HEAD \
+            && git clean -df \
+            && git pull
 
-           cd $HOME/apps/anime88/docker && docker compose down && docker compose up -d --build
+            chmod 777 $HOME/apps/anime88/assets/poster
+
+            cd $HOME/apps/anime88/docker && docker compose down && docker compose up -d --build
