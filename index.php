@@ -70,7 +70,7 @@
 			<div class="anime-list">
 				<?php
 				require("connection.php");
-				$query = "SELECT *, AVG(rating) AS avg FROM anime JOIN reviews ON anime.id = reviews.id_anime ORDER BY avg DESC LIMIT 4";
+				$query = "SELECT *, AVG(rating) AS avg FROM anime JOIN reviews ON anime.id = reviews.id_anime GROUP BY anime.id ORDER BY avg DESC LIMIT 4";
 				$result = mysqli_execute_query($connection, $query);
 
 				while ($row = mysqli_fetch_assoc($result)) { ?>
