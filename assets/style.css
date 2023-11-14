@@ -36,6 +36,18 @@
   color: var(--text);
 }
 
+/* Hapus arrow di input type number
+*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
 textarea:focus,
 input:focus {
   outline: none;
@@ -1069,5 +1081,10 @@ main.dashboard-form {
 
   .modal-content {
     width: 85%;
+  }
+
+  .search-filter {
+    width: 100%;
+    flex-direction: column;
   }
 }

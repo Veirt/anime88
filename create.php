@@ -139,7 +139,7 @@ if (isset($_POST["create"])) {
 				<!-- TODO: batasin kalo upcoming, kalo lewat tahunnya -->
 				<div>
 					<label for="year">Tahun</label>
-					<input required class="form-input" name="year" id="year" type="number" min="1900" max="2099" step="1" />
+					<input required class="form-input" name="year" id="year" type="number" min="1917" max="2099" step="1" />
 				</div>
 
 			</div>

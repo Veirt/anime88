@@ -195,7 +195,7 @@ if (isset($_GET["id"])) {
 
                 <div>
                     <label for="year">Tahun</label>
-                    <input required class="form-input" name="year" id="year" type="number" min="1900" max="2099" step="1" value="<?= isset($anime_data) ? $anime_data["year"] : '' ?>" />
+                    <input required class="form-input" name="year" id="year" type="number" min="1917" max="2099" step="1" value="<?= isset($anime_data) ? $anime_data["year"] : '' ?>" />
                 </div>
             </div>
 

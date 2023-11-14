@@ -3,8 +3,6 @@
 require("../utils.php");
 require("../connection.php");
 
-// TODO: filter berdasarkan genre. bisa multiple genre
-
 $name = isset($_GET["name"]) ? $_GET["name"] : "";
 
 // sort by Name ASC secara default
@@ -31,20 +29,13 @@ if (!empty($year)) {
     $filters .= " AND year = '$year'";
 }
 
-
-// Build the WHERE clause for additional filters
-$additionalFilters = "";
-if (!empty($season)) {
-    $additionalFilters .= " AND season = '$season'";
-}
-if (!empty($year)) {
-    $additionalFilters .= " AND year = '$year'";
-}
-
-
-
 $query = "SELECT *, AVG(rating) AS avg_rating FROM anime LEFT JOIN reviews ON anime.id = reviews.id_anime WHERE LOWER(name) LIKE ? $filters GROUP BY anime.id ORDER BY $key $order";
 $result = mysqli_execute_query($connection, $query, ["%$name%"],);
+
+if (mysqli_num_rows($result) == 0) {
+    echo "<h1>No result found.</h1>";
+    exit();
+}
 
 while ($row = mysqli_fetch_assoc($result)) { ?>
     <?php $url = "view.php?id=" . $row['id']; ?>
