@@ -3,6 +3,10 @@ require("utils.php");
 user_authorization("admin");
 require("connection.php");
 
+if (!isset($_GET["id"])) {
+    create_message("Cara pengaksesan update salah!", "error");
+}
+
 if (isset($_GET["id"])) {
     $edit_id = $_GET["id"];
     $query = "SELECT * FROM anime WHERE id = ?";
@@ -28,22 +32,78 @@ if (isset($_GET["id"])) {
         $temp = $_FILES["poster"]["tmp_name"];
         $target_file_name = sanitize_file_name("$name") . ".$file_extension";
 
-        if (move_uploaded_file($temp, "assets/poster/$target_file_name")) {
-            $query = "UPDATE anime SET name=?, synopsis=?, episodes=?, status=?, season=?, year=?, studio=?, poster=? WHERE id=?";
-            $result = mysqli_execute_query($connection, $query, [$name, $synopsis, $episodes, $status, $season, $year, $studio, $target_file_name, $edit_id]);
+        if (!check_valid_anime_name($name) && $name != $anime_data["name"]) {
+            create_message("Nama anime sudah ada.", "error");
+            redirect("update.php?id=$edit_id");
+            exit;
+        }
 
-            if ($result !== false) {
-                echo "<script>alert('Berhasil memperbarui anime!');</script>";
-                redirect("dashboard.php");
-            } else {
-                echo "Gagal memperbarui anime";
+        if (!isset($_POST["genre"])) {
+            create_message("Silakan pilih genre minimal satu.", "error");
+            redirect("update.php?id=$edit_id");
+            exit;
+        }
+
+        // Handle ketika admin upload poster baru
+        if ($original_file_name != "") {
+
+            // Validasi image
+            if (getimagesize($temp) === false) {
+                create_message("File yang Anda upload bukan gambar.", "error");
+                redirect("update.php?id=$edit_id");
+                exit;
+            }
+
+            $TEN_MB_SIZE = 10000000;
+            if ($_FILES["poster"]["size"] > $TEN_MB_SIZE) {
+                create_message("Size image terlalu besar!", "error");
+                redirect("update.php?id=$edit_id");
+                exit;
+            }
+
+            // Hapus image lama jika ada
+            if ($anime_data["poster"] != "" && file_exists("assets/poster/" . $anime_data["poster"])) {
+                unlink("assets/poster/" . $anime_data["poster"]);
+            }
+
+
+
+
+            // Move the new image to the target directory
+            if (!move_uploaded_file($temp, "assets/poster/$target_file_name")) {
+                create_message("Gagal mengupload gambar.", "error");
+                redirect("update.php?id=$edit_id");
+                exit;
             }
         } else {
-            echo "Gagal mengupload gambar";
+            // Jika admin tidak mengupload poster baru, maka gunakan poster lama
+            $target_file_name = $anime_data["poster"];
         }
+
+
+        $query = "UPDATE anime SET name=?, synopsis=?, episodes=?, status=?, season=?, year=?, studio=?, poster=? WHERE id=?";
+        $result = mysqli_execute_query($connection, $query, [$name, $synopsis, $episodes, $status, $season, $year, $studio, $target_file_name, $edit_id]);
+
+        // update genre juga
+        $query = "DELETE FROM anime_genre WHERE id_anime = ?";
+        $result = mysqli_execute_query($connection, $query, [$edit_id]);
+
+        $query = "INSERT INTO anime_genre (id_anime, id_genre) VALUES (?, ?)";
+        foreach ($_POST["genre"] as $genre_id) {
+            $result = mysqli_execute_query($connection, $query, [$edit_id, $genre_id]);
+        }
+
+
+        if ($result !== false) {
+            echo "<script>alert('Berhasil memperbarui anime!');</script>";
+            redirect("view.php?id=$edit_id");
+        } else {
+            create_message("Gagal memperbarui anime", "error");
+            redirect("update.php?id=$edit_id");
+        }
+
+        exit();
     }
-} else {
-    echo "Parameter 'edit' not provided";
 }
 ?>
 
@@ -63,12 +123,18 @@ if (isset($_GET["id"])) {
         </div>
 
         <form class="form" action="" method="post" enctype="multipart/form-data">
-            <?php if (isset($_SESSION["message"])) { ?>
-                <div class="message <?= $_SESSION['message']['type'] ?>">
-                    <?= $_SESSION["message"]["content"]; ?>
-                    <?php unset($_SESSION["message"]) ?>
-                </div>
-            <?php } ?>
+            <?php
+            if (isset($_SESSION["message"])) {
+                $message_type = $_SESSION["message"]["type"];
+                echo " <div class='message $message_type'>";
+                echo $_SESSION["message"]["content"];
+                echo "</div>";
+
+                // hapus message dari session. biar ga muncul terus.
+                unset($_SESSION["message"]);
+                exit();
+            };
+            ?>
 
             <?php if (isset($anime_data)) { ?>
                 <input type="hidden" name="anime_id" value="<?= $anime_data["id"] ?>">

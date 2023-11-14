@@ -147,3 +147,18 @@ function check_role(string $role)
     // cocokkin role user yang sedang login dengan role yang diminta di parameter.
     return $_SESSION["user"]["role"] == $role;
 }
+
+// Nama anime tidak boleh duplikat
+function check_valid_anime_name(string $anime_name)
+{
+    require("connection.php");
+
+    $query = "SELECT * FROM anime WHERE name = ?";
+    $result = mysqli_execute_query($connection, $query, [$anime_name]);
+
+    if (mysqli_num_rows($result) > 0) {
+        return false;
+    }
+
+    return true;
+}

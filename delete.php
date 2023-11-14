@@ -10,13 +10,17 @@ if (!isset($_GET["id"])) {
     exit;
 }
 
-$id = $_GET["id"];
+$previous_poster = mysqli_execute_query($connection, "SELECT poster FROM anime WHERE id = ?", [$_GET["id"]]);
+$previous_poster_result = mysqli_fetch_assoc($previous_poster)["poster"];
 
+$id = $_GET["id"];
 
 $query = "DELETE FROM anime WHERE id = ?";
 $result = mysqli_execute_query($connection, $query, [$id]);
 
 if ($result) {
+    // hapus juga posternya
+    unlink("./assets/poster/" . $previous_poster_result);
     create_message("Anime berhasil dihapus.", "success");
 } else {
     create_message("Anime gagal dihapus.", "error");
@@ -24,4 +28,3 @@ if ($result) {
 
 
 redirect("read.php");
-?>

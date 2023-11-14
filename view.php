@@ -152,7 +152,18 @@ function get_anime_ranking(int $id)
 <body>
     <?php include("includes/navbar.php") ?>
     <div style="width: 90%; margin: 10px auto">
-        <?php show_message(); ?>
+        <?php
+        if (isset($_SESSION["message"])) {
+            $message_type = $_SESSION["message"]["type"];
+            echo " <div class='message $message_type'>";
+            echo $_SESSION["message"]["content"];
+            echo "</div>";
+
+            // hapus message dari session. biar ga muncul terus.
+            unset($_SESSION["message"]);
+            exit();
+        };
+        ?>
     </div>
     <main>
 

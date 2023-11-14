@@ -1,24 +1,6 @@
 <?php require("utils.php") ?>
 <?php user_authorization("admin") ?>
 
-
-<?php
-function check_valid_anime_name(string $anime_name)
-{
-	require("connection.php");
-
-	$query = "SELECT * FROM anime WHERE name = ?";
-	$result = mysqli_execute_query($connection, $query, [$anime_name]);
-
-	if (mysqli_num_rows($result) > 0) {
-		return false;
-	}
-
-	return true;
-}
-
-?>
-
 <?php
 require("connection.php");
 
@@ -108,12 +90,7 @@ if (isset($_POST["create"])) {
 		</div>
 
 		<form class="form" action="" method="post" enctype="multipart/form-data">
-			<?php if (isset($_SESSION["message"])) { ?>
-				<div class="message <?= $_SESSION['message']['type'] ?>">
-					<?= $_SESSION["message"]["content"]; ?>
-					<?php unset($_SESSION["message"]) ?>
-				</div>
-			<?php } ?>
+			<?php show_message() ?>
 
 			<label for="anime-name">Nama Anime</label>
 			<input required class="form-input" type="text" name="anime-name" id="anime-name">
