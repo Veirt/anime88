@@ -50,6 +50,15 @@ if (isset($_POST["create"])) {
 		exit;
 	}
 
+	if ($status === "Upcoming") {
+        $currentYear = date("Y");
+        if ($year < $currentYear) {
+            create_message("Tahun untuk anime Upcoming harus di masa depan.", "error");
+            redirect("create.php");
+            exit;
+        }
+    }
+
 	$query = "INSERT INTO anime (name, synopsis, episodes, status, season, year, studio, poster) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 	$result = mysqli_execute_query($connection, $query, [$name, $synopsis, $episodes, $status, $season, $year, $studio, $target_file_name]);
 
@@ -159,6 +168,31 @@ if (isset($_POST["create"])) {
 			</div>
 
 		</form>
+		<script>
+        document.addEventListener('DOMContentLoaded', function () {
+        function limitYearSelection() {
+            var statusSelect = document.getElementById('status');
+            var yearInput = document.getElementById('year');
+            var seasonSelect = document.getElementById('season');
+
+            yearInput.value = '';
+
+            if (statusSelect.value === 'Upcoming') {
+                var currentYear = new Date().getFullYear();
+                yearInput.setAttribute('min', currentYear + 1);
+                yearInput.setAttribute('max', currentYear + 5);
+            } else {
+                yearInput.removeAttribute('min');
+                yearInput.removeAttribute('max');
+            }
+        }
+
+        limitYearSelection();
+        document.getElementById('status').addEventListener('change', limitYearSelection);
+        document.getElementById('season').addEventListener('change', limitYearSelection);
+    });
+    </script>
+
 	</main>
 
 </body>

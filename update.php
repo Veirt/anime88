@@ -194,8 +194,7 @@ if (isset($_GET["id"])) {
 
                 <div>
                     <label for="year">Tahun</label>
-                    <input required class="form-input" name="year" id="year" type="number" min="1917" max="2099" step="1" value="<?= isset($anime_data) ? $anime_data["year"] : '' ?>" />
-                </div>
+                    <input required class="form-input" name="year" id="year" type="number" min="1917" max="2099" step="1" value="<?= isset($anime_data) ? $anime_data["year"] : '' ?>" />                </div>
             </div>
 
             <label for="studio">Studio</label>
@@ -211,6 +210,31 @@ if (isset($_GET["id"])) {
                 <input name="update" class="btn" type="submit" value="Update">
             </div>
         </form>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        function limitYearSelection() {
+            var statusSelect = document.getElementById('status');
+            var yearInput = document.getElementById('year');
+            var seasonSelect = document.getElementById('season');
+
+            yearInput.value = '';
+
+            if (statusSelect.value === 'Upcoming') {
+                var currentYear = new Date().getFullYear();
+                yearInput.setAttribute('min', currentYear + 1);
+                yearInput.setAttribute('max', currentYear + 5);
+            } else {
+                yearInput.removeAttribute('min');
+                yearInput.removeAttribute('max');
+            }
+        }
+
+        limitYearSelection();
+        document.getElementById('status').addEventListener('change', limitYearSelection);
+        document.getElementById('season').addEventListener('change', limitYearSelection);
+    });
+    </script>
+
     </main>
 
 </body>
