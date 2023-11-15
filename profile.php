@@ -42,12 +42,12 @@ $user_anime_rating = getUserAnimeRating($user_id);
                 <?php foreach ($user_anime_rating as $idx => $rating) : ?>
                     <div class="rated-card">
                         <div class="rated-poster">
-                            <a href=""><img src="assets\poster\<?= $rating['poster'] ?>" alt=""></a>
+                            <a href="view.php?id=<?= $rating['id'] ?>"><img src="assets\poster\<?= $rating['poster'] ?>" alt=""></a>
                         </div>
                         <div class="rated-content">
                             <div class="rated-number">#<?= $idx + 1 ?> </div>
                             <div class="rated-title">
-                                <a href=""><?= $rating['anime_title'] ?></a>
+                                <a href="view.php?id=<?= $rating['id'] ?>"><?= $rating['anime_title'] ?></a>
                             </div>
                             <div class="rated-rate"><?= $rating['rating'] ?></div>
                         </div>

@@ -183,7 +183,7 @@ function getUserAnimeRating($user_id)
 {
     require("connection.php");
 
-    $query = "SELECT r.rating, a.name as anime_title, a.poster
+    $query = "SELECT r.rating, a.name as anime_title, a.poster, a.id
             FROM reviews r
             JOIN anime a ON r.id_anime = a.id
             WHERE r.id_user = ?";
