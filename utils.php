@@ -162,3 +162,48 @@ function check_valid_anime_name(string $anime_name)
 
     return true;
 }
+
+function getUserInfo($user_id) {
+    require("connection.php");
+
+    $query = "SELECT id, username FROM users WHERE id = :user_id";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if ($result) {
+        return $result;
+    } else {
+        return false;
+    }
+}
+
+function getUserAnimeRating($user_id) {
+    require("connection.php");
+
+    $sql = "SELECT r.rating, a.name as anime_title, a.poster
+            FROM reviews r
+            JOIN anime a ON r.id_anime = a.id
+            WHERE r.id_user = $user_id";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        return $result->fetch_all(MYSQLI_ASSOC);
+    } else {
+        return array();
+    }
+}
+
+function calculateMeanScore($ratings) {
+    if (empty($ratings)) {
+        return 0; 
+    }
+
+    $totalScores = array_column($ratings, 'rating');
+    $meanScore = array_sum($totalScores) / count($totalScores);
+
+    return round($meanScore, 2); 
+}

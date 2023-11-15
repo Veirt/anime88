@@ -7,6 +7,18 @@
 
 <?php $title = "Anime88 - Profile" ?>
 <?php include("includes/head.php") ?>
+<?php 
+var_dump($_SESSION);
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+$user_info = getUserInfo($user_id);
+$user_anime_rating = getUserAnimeRating($user_id);
+?>
 
 <body>
     <?php include("includes/navbar.php") ?>
@@ -24,26 +36,28 @@
                     c2.488-2.191,6.128-2.479,8.932-0.711c12.697,8.004,22.618,20.005,27.967,34.253c1.144,3.047,0.425,6.482-1.842,8.817
                     C943.037,973.621,920.691,983.86,896,983.86z"/>
                 </svg>
-                <h1>Username</h1>
+                <h1><?php echo $user_info ['username']; ?></h1>
                 <div class="total-rated">
-                    <p>Total Anime Rated : </p>
-                    <p>Mean Score : </p>
+                    <p>Total Anime Rated : <?php echo count($user_anime_rating); ?></p>
+                    <p>Mean Score : <?php calculateMeanScore($user_anime_rating); ?></p>
                 </div>
             </div>
 
             <div class="rated-container">
-                <div class="rated-card">
-                    <div class="rated-poster">
-                        <a href=""><img src="assets\poster\100kanojo.jpg" alt=""></a>
-                    </div>
-                    <div class="rated-content">
-                        <div class="rated-number">#1</div>
-                        <div class="rated-title">
-                            <a href="">Kimi no Koto ga Dai Dai Dai Dai Daisuki na 100-nin no Kanojo</a>
+                <?php foreach ($user_anime_rating as $rating): ?>
+                    <div class="rated-card">
+                        <div class="rated-poster">
+                            <a href=""><img src="assets\poster\<?php echo $rating['poster']; ?>" alt=""></a>
                         </div>
-                        <div class="rated-rate">10.00</div>
+                        <div class="rated-content">
+                        <div class="rated-number">#<?php echo $rating['rank']; ?> </div>
+                            <div class="rated-title">
+                                <a href=""><?php echo $rating['anime_title']; ?></a>
+                            </div>
+                            <div class="rated-rate"><?php echo $rating['rating']; ?></div>
+                        </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </section>
     </main>
