@@ -63,7 +63,6 @@
 			</div>
 		</section>
 
-		<!-- TODO: view all akan mengarah ke anime.php sesuai dengan section-->
 		<section class="anime-section">
 			<div class="anime-header">
 				<h1>Top Anime</h1>

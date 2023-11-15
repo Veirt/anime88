@@ -2,7 +2,6 @@
 <?php require("utils.php") ?>
 <?php user_authorization("user") ?>
 
-<!-- TODO: bagusin lagi -->
 <!DOCTYPE html>
 <html lang="en">
 
