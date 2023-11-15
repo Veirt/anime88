@@ -114,18 +114,17 @@ function get_genre(int $id)
 // Spring season (2nd quarter) from April to June.
 // Summer season (3rd quarter) from July from September.
 // Fall season (4th quarter) from October to December.
+$season_month = [
+    "Winter" => [1, 2, 3],
+    "Spring" => [4, 5, 6],
+    "Summer" => [7, 8, 9],
+    "Fall" => [10, 11, 12],
+];
 function get_current_season()
 {
-    $season_month = [
-        "Winter" => [1, 2, 3],
-        "Spring" => [4, 5, 6],
-        "Summer" => [7, 8, 9],
-        "Fall" => [10, 11, 12],
-    ];
-
     $month = date("m");
 
-    foreach ($season_month as $season => $months) {
+    foreach ($GLOBALS["season_month"] as $season => $months) {
         if (in_array($month, $months)) {
             return $season;
         }

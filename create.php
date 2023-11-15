@@ -24,6 +24,47 @@ if (isset($_POST["create"])) {
 		exit;
 	}
 
+	if ($status === "Upcoming") {
+		$currentYear = date("Y");
+		$currentMonth = date("m");
+		$last_month_of_season = $GLOBALS["season_month"][$season][2];
+
+		// validasi tahun duluan.
+		if ($year < $currentYear) {
+			create_message("Tahun untuk anime Upcoming harus di masa depan.", "error");
+			redirect("update.php?id=$edit_id");
+			exit;
+		}
+
+		// validasi tahun dan bulan ketika tahunnya sama
+		if ($last_month_of_season <= $currentMonth && $year <= $currentYear) {
+			create_message("Tahun untuk anime Upcoming harus di masa depan.", "error");
+			redirect("update.php?id=$edit_id");
+			exit;
+		}
+	}
+
+
+	if ($status === "Finished") {
+		$currentYear = date("Y");
+		$currentMonth = date("m");
+		$first_month_of_season = $GLOBALS["season_month"][$season][0];
+
+		// validasi tahun duluan.
+		if ($year > $currentYear) {
+			create_message("Tahun untuk anime Finished harus di masa lalu.", "error");
+			redirect("update.php?id=$edit_id");
+			exit;
+		}
+
+		if ($year == $currentYear && $first_month_of_season > $currentMonth) {
+			create_message("Tahun untuk anime Finished harus di masa lalu.", "error");
+			redirect("update.php?id=$edit_id");
+			exit;
+		}
+	}
+
+
 	if (!isset($_POST["genre"])) {
 		create_message("Silakan pilih genre minimal satu.", "error");
 		redirect("create.php");
@@ -50,14 +91,6 @@ if (isset($_POST["create"])) {
 		exit;
 	}
 
-	if ($status === "Upcoming") {
-        $currentYear = date("Y");
-        if ($year < $currentYear) {
-            create_message("Tahun untuk anime Upcoming harus di masa depan.", "error");
-            redirect("create.php");
-            exit;
-        }
-    }
 
 	$query = "INSERT INTO anime (name, synopsis, episodes, status, season, year, studio, poster) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 	$result = mysqli_execute_query($connection, $query, [$name, $synopsis, $episodes, $status, $season, $year, $studio, $target_file_name]);
@@ -145,7 +178,6 @@ if (isset($_POST["create"])) {
 						<option value="Fall">Fall</option>
 					</select>
 				</div>
-				<!-- TODO: batasin kalo upcoming, kalo lewat tahunnya -->
 				<div>
 					<label for="year">Tahun</label>
 					<input required class="form-input" name="year" id="year" type="number" min="1917" max="2099" step="1" />
@@ -168,33 +200,10 @@ if (isset($_POST["create"])) {
 			</div>
 
 		</form>
-		<script>
-        document.addEventListener('DOMContentLoaded', function () {
-        function limitYearSelection() {
-            var statusSelect = document.getElementById('status');
-            var yearInput = document.getElementById('year');
-            var seasonSelect = document.getElementById('season');
-
-            yearInput.value = '';
-
-            if (statusSelect.value === 'Upcoming') {
-                var currentYear = new Date().getFullYear();
-                yearInput.setAttribute('min', currentYear + 1);
-                yearInput.setAttribute('max', currentYear + 5);
-            } else {
-                yearInput.removeAttribute('min');
-                yearInput.removeAttribute('max');
-            }
-        }
-
-        limitYearSelection();
-        document.getElementById('status').addEventListener('change', limitYearSelection);
-        document.getElementById('season').addEventListener('change', limitYearSelection);
-    });
-    </script>
 
 	</main>
 
+	<script src="assets/js/validateSeasonYear.js"></script>
 </body>
 
 </html>
