@@ -8,6 +8,7 @@
   --secondary: #ebebed;
   --accent: #7b428f;
   --green: #059669;
+  --orange: #ff8b02;
   --blue: #2980b9;
   --red: #db2350;
   --white: #e7ebf4;
@@ -881,7 +882,7 @@ main.dashboard-form {
   position: relative;
   border: none;
   border-radius: 8px;
-  margin: 5% auto; /* 15% from the top and centered */
+  margin: 5% auto; /* 5% from the top and centered */
   padding: 20px;
   width: 45%; /* Could be more or less, depending on screen size */
 }
@@ -901,6 +902,11 @@ main.dashboard-form {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.user-data {
+  background: var(--background-secondary);
+  width: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
