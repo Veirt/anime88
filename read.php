@@ -30,7 +30,7 @@ if (isset($_GET["name"])) {
 		</div>
 
 		<form style="width: 100%" class="search-filter" action="">
-			<div style="display: flex; justify-content: center; width: 90%">
+			<div style="display: flex; justify-content: center">
 				<input value="<?= $name ?>" onkeyup="getSearchResult()" placeholder="Search for anime..." type="text" name="name" id="anime-name" class="form-input search-bar">
 				<button style="margin-left: -30px;" class="search-button" type="submit">
 					<svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 50 50">
