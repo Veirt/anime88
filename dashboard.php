@@ -1,3 +1,4 @@
+<?php require("connection.php") ?>
 <?php require("utils.php") ?>
 <?php user_authorization("admin") ?>
 
@@ -106,8 +107,22 @@ function get_review_count()
 
             </div>
 
-            <div class="test">
-                Placeholder.
+            <div style="width: 30%" class="">
+                <?php
+                $query = "SELECT * FROM anime ORDER BY RAND() LIMIT 1";
+                $result = mysqli_execute_query($connection, $query);
+                $row = mysqli_fetch_assoc($result);
+                ?>
+                <div style="width: 92%" class="dashboard-item">
+                    <div>
+                        Random Anime
+                        <a href="view.php?id=<?= $row['id'] ?>">
+                            <h3><?= $row['name'] ?></h3>
+
+                        </a>
+
+                    </div>
+                </div>
             </div>
         </section>
 

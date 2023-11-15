@@ -14,8 +14,7 @@ if (isset($_GET["id"])) {
     $anime_data = $result->fetch_assoc();
 
     if (!$anime_data) {
-        echo "Anime not found";
-        exit;
+        create_message("Anime tidak ditemukan!", "error");
     }
 
     if (isset($_POST["update"])) {
@@ -171,6 +170,9 @@ if (isset($_GET["id"])) {
 
                 // hapus message dari session. biar ga muncul terus.
                 unset($_SESSION["message"]);
+                if ($message_type == "error") {
+                    exit();
+                }
             };
             ?>
 
