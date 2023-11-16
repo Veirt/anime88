@@ -43,13 +43,15 @@ Klik pada username/icon `⌄` disamping nama admin, maka akan tampil dua pilihan
 
 Salah satu menu yang dapat dipilih oleh Admin yaitu Log out, Dimana admin dapat melakukan log out dari akun admin menjadi "Guest", Akan diarahkan kembali ke menu login
 
-![image](https://github.com/Veirt/anime88/assets/119658224/6d52352e-1b71-431a-9837-253e847b652b)
+![image](https://github.com/Veirt/anime88/assets/119658224/de918160-6555-41a2-b67e-9ca87674792e)
+
 
 ### -Admin Dashboard Menu
 
 Menu lainnya yang dapat admin click yaitu "Dashboard" dimana setelah meng-click "Dashboard" Admin Akan Ditujukan ke halaman dashboard admin.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/f9c30878-3d86-4486-b49a-d701d827d796)
+![image](https://github.com/Veirt/anime88/assets/119658224/4b1ddd0c-0e2a-418c-bd7d-21e35e193b43)
+
 
 Dalam Menu Dashboard, ditampilkan beberapa data yaitu, "Total Users" yang menunjukkan jumlah user yang telah terdaftar didalam website ini,
 "Total Anime" yang menunjukkan Jumlah Anime/Data Anime yang ada didalam website ini, "Total Reviews" dimana menunjukkan total reviews yang telah dilakukan oleh seluruh users yang telah terdaftar,
