@@ -43,27 +43,25 @@ Klik pada username/icon `⌄` disamping nama admin, maka akan tampil dua pilihan
 
 Salah satu menu yang dapat dipilih oleh Admin yaitu Log out, Dimana admin dapat melakukan log out dari akun admin menjadi "Guest", Akan diarahkan kembali ke menu login
 
-![image](https://github.com/Veirt/anime88/assets/119658224/de918160-6555-41a2-b67e-9ca87674792e)
-
+![image](https://github.com/Veirt/anime88/assets/119658224/76d0aea4-fa66-47e0-a06a-5ab32f9e41d7)
 
 ### -Admin Dashboard Menu
 
 Menu lainnya yang dapat admin click yaitu "Dashboard" dimana setelah meng-click "Dashboard" Admin Akan Ditujukan ke halaman dashboard admin.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/4b1ddd0c-0e2a-418c-bd7d-21e35e193b43)
-
+![image](https://github.com/Veirt/anime88/assets/119658224/e5a3f26a-bf3d-4837-b8ea-fdf857b65125)
 
 Dalam Menu Dashboard, ditampilkan beberapa data yaitu, "Total Users" yang menunjukkan jumlah user yang telah terdaftar didalam website ini,
 "Total Anime" yang menunjukkan Jumlah Anime/Data Anime yang ada didalam website ini, "Total Reviews" dimana menunjukkan total reviews yang telah dilakukan oleh seluruh users yang telah terdaftar,
 dan terakhir ada "Random Anime" dimana data anime (title) yang ada akan di pilih secara random dan akan ditampilkan disini
 
-![image](https://github.com/Veirt/anime88/assets/119658224/bee4835d-a7a3-43fd-aba7-4b1df6dcd867)
+![image](https://github.com/Veirt/anime88/assets/119658224/e98fdd51-fe9c-47eb-afa1-075c314b26e9)
 
 Di bagian kiri Dashboard terdapat Sidebar menu yang menampilkan Page Dashboard apa yang sedang di akses dan yang dapat di akses oleh admin,
 Terdapat Menu "Dasboard" (Halaman Sekarang), Menu Create, Menu "Read" dan Menu "Home".
 
 <p align="center">
-<img src=https://github.com/Veirt/anime88/assets/119658224/a3f8953a-a05a-4fac-be37-eb4e9224473b />
+<img src=https://github.com/Veirt/anime88/assets/119658224/f622875b-3f1e-4dd1-ba3f-833617936520 />
 </p>
 
 Masing-masing menu dapat di click dan akan menuju ke halaman mereka.
@@ -72,7 +70,8 @@ Masing-masing menu dapat di click dan akan menuju ke halaman mereka.
 
 Didalam menu "Create", Admin dapat melakukan penambahan data anime dengan memasukkan data-data kedalam form Create Anime.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/1d357e1a-baca-458a-91de-2cc79f78ac4f)
+![image](https://github.com/Veirt/anime88/assets/119658224/cdc34ec3-9986-4e94-a514-3c23701024a8)
+
 
 Admin Dapat Menambahkan Nama Anime, Sinopsis anime, Jumlah Episode, Genre Anime (Admin dapat memilih genre dengan menekan genre yang ingin dimasukkan),
 Status anime, Season anime, Tahun Anime, Studio anime dan Poster anime.
@@ -81,12 +80,14 @@ Status anime, Season anime, Tahun Anime, Studio anime dan Poster anime.
 
 Menu "Read" merupakan menu dimana Admin dapat melihat seluruh Anime yang telah di tambahkan.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/98e0fc29-52f7-4903-887f-5caa18394273)
+![image](https://github.com/Veirt/anime88/assets/119658224/3b3f5ed2-4ab5-4908-9c35-a9e3e41960d2)
+
 
 Didalam menu "Read" ini admin juga dapat melakukan Searching terhadap anime yang ada di dalam search bar yang tersedia,
 Admin juga dapat mem-filter berdasarkan Season dan Tahun rilis anime tersebut.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/98105afa-106b-4a48-9cdd-71dced375551)
+![image](https://github.com/Veirt/anime88/assets/119658224/d0aa14b7-6443-4748-84d5-24be31e6c971)
+
 
 Dengan Memilih Season atau Memasukkan Tahun kedalam Kolom "Tahun".
 
@@ -94,7 +95,8 @@ Dengan Memilih Season atau Memasukkan Tahun kedalam Kolom "Tahun".
 
 Admin dapat meng-click Poster Anime dan akan menunjukkan mereka ke halaman detail anime tersebut.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/cc7409ed-52c5-4e74-8d13-5d91dd090eff)
+![image](https://github.com/Veirt/anime88/assets/119658224/bd292185-8583-4bc4-97e0-999b08e61e94)
+
 
 Disini Admin dapat melihat seluruh data anime yang telah di "Create" serta informasi lainnya seperti,
 "Score", "Ranking", Jumlah User yang me-rank dan me-review anime tersebut.
@@ -104,7 +106,8 @@ Disini Admin dapat melihat seluruh data anime yang telah di "Create" serta infor
 Untuk Melakukan Update terhadap data anime, Admin dapat meng-click tombol "Update" yang ada di halaman Detail anime,
 Tombol Berada di bagian "Actions" yang terletak di bagian kiri halaman.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/c1bd4d3e-1933-422d-80fc-3b24da9b542d)
+![image](https://github.com/Veirt/anime88/assets/119658224/52b5984d-af84-4bcd-843b-30dac3dcca03)
+
 
 Setelah meng-click tombol "Update" maka akan di arahkan ke halaman Update anime yang dimana admin dapat merubah data anime tersebut,
 Akan ditampilkan data anime sebelum di update.
@@ -114,21 +117,25 @@ Setelah Selesai Mengupdate, Admin dapat meng-click tombol "Update" untuk mengupd
 
 Untuk menghapus data anime, Admin dapat Meng-click tombol "Delete" yang berada di sebelah tombol "Update".
 
-![image](https://github.com/Veirt/anime88/assets/119658224/c8d1c911-3104-4854-8cc2-b9e3afd8ae14)
+![image](https://github.com/Veirt/anime88/assets/119658224/3b3139aa-9d15-431b-9a45-db6778695f4d)
+
 
 Akan ada Konfirmasi setelah meng-click tombol "Delete", Admin dapat menekan "Cancel" jika ingin membatalkan penghapusan dan "Ok" Jika ingin lanjut menghapus data
 
-![image](https://github.com/Veirt/anime88/assets/119658224/c8f37df8-ea1c-4ee0-9126-5a55833fa004)
+![image](https://github.com/Veirt/anime88/assets/119658224/0199594d-fe89-4048-a5e9-83479ae8449e)
+
 
 Jika Admin memilih "Ok" maka data anime akan terhapus dan akan muncul alert seperti berikut.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/dae9ef3d-1911-424e-8658-f05c18135d47)
+![image](https://github.com/Veirt/anime88/assets/119658224/c8dec475-1041-48cc-8f8f-531a2395b072)
+
 
 ### -Home Button
 
 Terdapat Menu "Home" pada sidebar dashboard yang bila di click akan mengembalikan admin ke halaman utama website
 
-![image](https://github.com/Veirt/anime88/assets/119658224/7316ec61-0f16-48c8-a903-d6d6f1072ec8)
+![image](https://github.com/Veirt/anime88/assets/119658224/4427e160-b039-4ace-99c2-e07dce80b159)
+
 
 ## User
 
@@ -138,28 +145,31 @@ User atau Pengguna pada website ini memiliki role sebagai User yang dapat Meliha
 
 User dapat melakukan login jika sudah memiliki akun, Setelah memasukkan Username dan Password, click submit untuk melakukan Login.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/8ccfe240-c3d2-4519-bd4f-07e34deb88bc)
+![image](https://github.com/Veirt/anime88/assets/119658224/ec4a5032-cbca-496a-a541-3c1ec4153ac4)
 
 Setelah itu maka user akan masuk sebagai user yang terdaftar dan dapat dilihat di pojok kanan atas/navbar
 
 <p align="center">
-<img src=https://github.com/Veirt/anime88/assets/119658224/fc1852eb-2a45-4595-94bc-bfaed9b2bf02 />
+<img src=https://github.com/Veirt/anime88/assets/119658224/6e2b490d-4190-4c6c-b159-ff7cd8d8fec7 />
 </p>
 
 ### -Registrasi User
 
 Jika pengguna belum mendaftarkan akun di wabsite Anime88, Pengguna dapat melakukan Registrasi Akun dengan meng-click tombol "Registrasi" di sebelah tombol "login".
 
-![image](https://github.com/Veirt/anime88/assets/119658224/fcfd15a2-9c4b-42f6-a4d3-650d12fe6621)
+![image](https://github.com/Veirt/anime88/assets/119658224/cdb4557d-25ab-4ba0-9161-4a279b9c176d)
+
 
 Setelah meng-click tombol "Registrasi", akan tampil form Registrasi untuk pengguna mendaftarkan akun mereka.
 Masukkan Username, Password dan confirm Passowrd nya lalu click "Register"
 
-![image](https://github.com/Veirt/anime88/assets/119658224/fcd113bb-3eca-46b5-9894-b7e922a83c48)
+![image](https://github.com/Veirt/anime88/assets/119658224/317dba45-0957-4627-9fac-16d8314d875e)
+
 
 Setelah Register maka akan di arahkan ke form login untuk melakukan login dengan akun yang baru didaftarkan.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/873997a1-d790-4205-8f57-e1e693315977)
+![image](https://github.com/Veirt/anime88/assets/119658224/075ce301-29a7-45e7-9546-27a7f5f73b88)
+
 
 Setelah login maka akun telah terbuat dan pengguna akan login sebagai akun yang telah didaftarkan.
 
@@ -167,38 +177,39 @@ Setelah login maka akun telah terbuat dan pengguna akan login sebagai akun yang 
 
 User akan memiliki landing page sebagai berikut.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/c59c2c1e-204c-4c23-b82d-cc41da4a1975)
+![image](https://github.com/Veirt/anime88/assets/119658224/96b942f6-eb03-487c-8027-8b283767b0c6)
 
-Click menu dropdown ![image](https://github.com/Veirt/anime88/assets/119658224/ff9615d6-bc97-4292-b5ca-e5e665bfe6cc) disamping nama user, maka akan tampil dua pilihan yang dapat dipilih user
+
+Click menu dropdown ![image](https://github.com/Veirt/anime88/assets/119658224/b4bc1c31-835c-45a6-8c6c-60861074aca8) disamping nama user, maka akan tampil dua pilihan yang dapat dipilih user
 
 <p align="center">
-<img src=https://github.com/Veirt/anime88/assets/119658224/0907f543-6d71-4d02-9a1e-e7e4d96b8f7f />
+<img src=https://github.com/Veirt/anime88/assets/119658224/6d25883d-8dde-406e-8a67-a2031a09d692 />
 </p>
 
 Selain itu, Di landing page terdapat Konten yang lain seperti,
 
-![image](https://github.com/Veirt/anime88/assets/119658224/cf39e029-e3f8-48f7-bb42-a65fae94ee3a)
+![image](https://github.com/Veirt/anime88/assets/119658224/d08d0d8e-9243-431a-845e-24cf24e36806)
 
 Search bar, dimana user dapat melakukan Searching, searching juga dapat di filter berdasarkan season dan tahun rilis.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/9826534e-e66a-4a55-bf77-5171e6059eca)
+![image](https://github.com/Veirt/anime88/assets/119658224/b523af12-4ec8-4b08-aa59-4bde82499b87)
 
 View beberapa genre yang ada di anime.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/7a03a0cd-4e78-418b-a44c-e5d6fbb75e3b)
+![image](https://github.com/Veirt/anime88/assets/119658224/e7dfaa68-d030-4f31-9bea-f2644a906acc)
 
 Section Quotes yang akan menampilkan quotes-quotes secara random setiap page di refresh
 
-![image](https://github.com/Veirt/anime88/assets/119658224/3a0d6c2b-2ad5-4136-913f-7fd4be561f78)
+![image](https://github.com/Veirt/anime88/assets/119658224/d4b9b812-4b71-4040-9ac4-8b67b2a413c7)
 
 Section "Top Anime" menampilkan 4 Top anime (anime yang paling tinggi ratingnya), dan tombol "View All" menuju page Anime yang di sort ratingnya secara descending.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/46427d2d-eb89-45b3-858c-51ffccda296c)
+![image](https://github.com/Veirt/anime88/assets/119658224/4a3e4184-006d-46a4-b629-27b61c151c13)
 
 Section "Seaosonal Anime" menampilkan 4 Seasonal anime (anime yang sedang tayang/airing), dan tombol "View All" menuju page Anime yang akan menampilkan seluruh anime yang sedang airing.
 
 <p align="center">
-<img src=https://github.com/Veirt/anime88/assets/119658224/addc8f81-6443-4485-8338-c7d434db75a8 />
+<img src=https://github.com/Veirt/anime88/assets/119658224/76adc036-e282-4bcf-84f7-d6d8262ef4ec />
 </p>
 
 Terdapat tombol dark-mode/light-mode yang dapat di akses di page manapun di ujung kanan bawah page.
@@ -211,7 +222,7 @@ Sama seperti Admin, Salah satu menu yang dapat dipilih oleh User yaitu Log out, 
 
 User dapat melihat detail anime dengan cara meng-click poster anime atau title animenya
 
-![image](https://github.com/Veirt/anime88/assets/119658224/4231ca4d-c8e7-42fd-ba01-d9bf25cb129a)
+![image](https://github.com/Veirt/anime88/assets/119658224/5fee916a-5e19-4eac-8e2a-03ab688e84db)
 
 Maka akan tampil detail anime tersebut.
 
@@ -220,36 +231,30 @@ Maka akan tampil detail anime tersebut.
 User dapat melakukan rating terhadap anime dengan cara memasuki halaman detail anime yang inging di rating,
 Lalu meng-click tombol "Add Review"
 
-<p align="center">
-<img src=https://github.com/Veirt/anime88/assets/119658224/e749a9aa-ff65-49e2-8812-c33021479fe5 />
-</p>
+![image](https://github.com/Veirt/anime88/assets/119658224/abba4589-16b7-455e-b813-145e4b7507d3)
 
 Setelah itu akan tampil form untuk melakukan rating & dan review seperti berikut.
 
-<p align="center">
-<img src=https://github.com/Veirt/anime88/assets/119658224/e94e0b3a-14f2-4d59-80e7-e7cfcc4bad70 />
-</p>
+![image](https://github.com/Veirt/anime88/assets/119658224/3290915f-8d5e-4c19-9de0-3615d2290c25)
 
 Setelah selesai, click submit untuk mengsubmit review & rating.
 User juga dapat mengosongkan review bila tidak ingin memberikan ulasan terhadap anime,
 Namun user tidak bisa mengosongkan bagian "Rating" dan hanya mengisi review.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/d7057b40-f5fd-4324-9dfa-b305b4776748)
+![image](https://github.com/Veirt/anime88/assets/119658224/36d997d6-6b8e-45e1-822f-6082c691f839)
 
 ### -User Profile
 
 Menu lain yang ada di Menu dropdown selain Log out yaitu Profile.
 User dapat melihat profile mereka dengan meng-click tombol "Profile"
 
-<p align="center">
-<img src=https://github.com/Veirt/anime88/assets/119658224/acedc707-9391-4efb-bd91-ca3c376279e7 />
-</p>
+![image](https://github.com/Veirt/anime88/assets/119658224/11de23b6-2f63-42e1-8035-656c64a40b80)
 
 Halaman Profile akan berisi beberapa informasi tentang user seperti
 Username, Total Anime Rated dan Rata-rata/mean score anime.
 Dan juga anime yang telah di Rate & Review oleh user tersebut.
 
-![image](https://github.com/Veirt/anime88/assets/119658224/8ddfc7ad-8944-4fac-9fe1-5abee33634bd)
+![image](https://github.com/Veirt/anime88/assets/119658224/8c6260ce-e889-4216-a3ba-795a4d795742)
 
 ## Guest Mode
 
