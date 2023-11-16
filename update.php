@@ -170,9 +170,6 @@ if (isset($_GET["id"])) {
 
                 // hapus message dari session. biar ga muncul terus.
                 unset($_SESSION["message"]);
-                if ($message_type == "error") {
-                    exit();
-                }
             };
             ?>
 
@@ -181,7 +178,7 @@ if (isset($_GET["id"])) {
             <?php } ?>
 
             <label for="anime-name">Nama Anime</label>
-            <input required class="form-input" type="text" name="anime-name" id="anime-name" value="<?= isset($anime_data) ? $anime_data["name"] : '' ?>">
+            <input required class="form-input" type="text" name="anime-name" id="anime-name" value="<?= isset($anime_data) ? htmlspecialchars($anime_data["name"]) : '' ?>">
 
             <label for="synopsis">Sinopsis</label>
             <textarea required class="form-input" type="text" rows="15" name="synopsis" id="synopsis"><?= isset($anime_data) ? $anime_data["synopsis"] : '' ?></textarea>
