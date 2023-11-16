@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 16, 2023 at 07:04 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Host: db
+-- Generation Time: Nov 16, 2023 at 12:31 PM
+-- Server version: 10.6.15-MariaDB-1:10.6.15+maria~ubu2004
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -99,7 +99,8 @@ INSERT INTO `anime` (`id`, `name`, `synopsis`, `episodes`, `status`, `season`, `
 (54, 'Haikyuu!! To the Top Part 2', 'Once called a fallen powerhouse and known as \"Flightless Crows,\" Karasuno High School has finally taken flight at nationals. With a comprehensive performance against Tsubakihara Academy in their first match, the team is now facing its toughest opponent yet: the runners-up of the last Spring Tournament, Inarizaki High School. Furthermore, dealing with the formidable twin Miya brothers only makes things more difficult for Karasuno.\r\n\r\nAs soon as the match begins, Karasuno is overwhelmed by all the noise and jeers from the supporters of Inarizaki High but rekindles its strength thanks to its own loyal fans. Karasuno also gains some momentum by utilizing an attack centered on Shouyou Hinata, but the eccentric play of Atsumu and Osamu Miya delivers an unexpected blow that leaves their opponent astounded.\r\n\r\nThings are bound to get intense as the match progresses between these two teams. Will Karasuno be able to defeat Inarizaki High and overcome the hurdles that threaten its pursuit to the top?', 12, 'Finished', 'Fall', '2020', 'Production I.G', 'haikyuu-to-the-top-part-2.jpg'),
 (55, 'Shin no Nakama ja Nai to Yuusha no Party wo Oidasareta node, Henkyou de Slow Life suru Koto ni Shimashita', 'Far away from the reaches of demons and war, near the borderland of Zoltan, D-Rank adventurer Red lives a normal existence. Through perseverance and hard work, his dream of starting his own apothecary and peaceful life in the countryside finally came true. Abruptly, Red gets a live-in partner and assistant named Rit—the princess of Duchy Loggervia and an adventurer herself—who gives everything up to join him.\r\n\r\nAlthough honest, kind, and loved by all, Red has a secret shared only with Rit: his real name is Gideon, brother of Ruti Ragnason, the \"Hero\" and a former member of her party. Ares Drowa, the \"Sage,\" kicked Red out of their party after their war against the Demon Lord after deciding he was weak and insignificant. Now, even though Red has left the Hero\'s party behind by assuming a new life together with Rit, his past has yet to let go of him.', 13, 'Finished', 'Fall', '2021', 'Studio Flad, Wolfsbane', 'shin-no-nakama-ja-nai-to-yuusha-no-party-wo-oidasareta-node-henkyou-de-slow-life-suru-koto-ni-shimashita.jpg'),
 (56, 'Koori Zokusei Danshi to Cool na Douryou Joshi', 'Kind-hearted Himuro-kun is unfortunate: when in deep concentration, stressed, or flustered, he involuntarily creates blizzard conditions for himself and anyone in his vicinity. During one such incident on the first day of his new job, Himuro-kun encounters the beautiful Fuyutsuki-san, who helps him break out of his nerve-induced ice. As it turns out, Fuyutsuki-san is his new coworker.\r\n\r\nAt the office, the cool-headed Fuyutsuki-san offers simple and rational solutions to Himuro-kun\'s icy dilemmas—everything from helping him garden without freezing his plants to ensuring he does not melt during their tropical work retreat. Every time Fuyutsuki-san does something kind for him, the tempest of emotions he experiences inside embarrassingly manifests on the outside.\r\n\r\nAs a result of the frequent snowstorms, Himuro-kun\'s feelings for Fuyutsuki-san are impossible to hide. Even though Fuyutsuki-san is unfamiliar with love, Himuro-kun remains determined to repay her kindness and warm her heart in any way he can.\r\n', 12, 'Finished', 'Winter', '2023', 'Zero-G, Liber', 'koori-zokusei-danshi-to-cool-na-douryou-joshi.jpg'),
-(57, 'Seiken Gakuin no Makentsukai', 'Battles for ancient kingdoms are nothing compared to the battles of a classroom!\r\n\r\nAwakening from magical stasis after a thousand years, the Dark Lord Leonis suddenly finds himself in the body of a ten-year-old boy! He quickly meets Riselia, a girl confronting the Voids, creatures that have nearly exterminated humanity. Determined to uncover the mysteries of this strange new era, Leonis enrolls in Excalibur Academy, a school that trains students to fight back against these enigmatic monsters. Could the Voids hold some connection to Leonis\'s past?', 12, 'Airing', 'Fall', '2023', 'Passione', 'seiken-gakuin-no-makentsukai.jpg');
+(57, 'Seiken Gakuin no Makentsukai', 'Battles for ancient kingdoms are nothing compared to the battles of a classroom!\r\n\r\nAwakening from magical stasis after a thousand years, the Dark Lord Leonis suddenly finds himself in the body of a ten-year-old boy! He quickly meets Riselia, a girl confronting the Voids, creatures that have nearly exterminated humanity. Determined to uncover the mysteries of this strange new era, Leonis enrolls in Excalibur Academy, a school that trains students to fight back against these enigmatic monsters. Could the Voids hold some connection to Leonis\'s past?', 12, 'Airing', 'Fall', '2023', 'Passione', 'seiken-gakuin-no-makentsukai.jpg'),
+(58, 'Azumanga Daiou', 'Chiyo Mihama begins her high school career as one of the strangest students in her freshman class—a tiny, 10-year-old academic prodigy with a fondness for plush dolls and homemade cooking. But her homeroom teacher, Yukari Tanizaki, is the kind of person who would hijack a student\'s bike to avoid being late, so \"strange\" is a relative word.\r\n\r\nThere certainly isn\'t a shortage of peculiar girls in Yukari-sensei\'s homeroom class. Accompanying Chiyo are students like Tomo Takino, an energetic tomboy with more enthusiasm than brains; Koyomi Mizuhara, Tomo\'s best friend whose temper has a fuse shorter than Chiyo; and Sakaki, a tall, athletic beauty whose intimidating looks hide a gentle personality and a painful obsession with cats. In addition, transfer student Ayumu Kasuga, a girl with her head stuck in the clouds, fits right in with the rest of the girls—and she has a few interesting theories about Chiyo\'s pigtails!\r\n\r\nTogether, this lovable group of girls experience the ups and downs of school life, their many adventures filled with constant laughter, surreal absurdity, and even touching commentary on the bittersweet, temporal nature of high school.', 26, 'Finished', 'Spring', '2002', 'J.C.Staff', 'azumanga-daiou.jpg');
 
 -- --------------------------------------------------------
 
@@ -282,7 +283,9 @@ INSERT INTO `anime_genre` (`id_anime`, `id_genre`) VALUES
 (57, 1),
 (57, 7),
 (57, 18),
-(57, 14);
+(57, 14),
+(58, 3),
+(58, 14);
 
 -- --------------------------------------------------------
 
@@ -343,7 +346,82 @@ CREATE TABLE `reviews` (
 
 INSERT INTO `reviews` (`id_user`, `id_anime`, `rating`, `comment`) VALUES
 (1, 1, 10, 'ntapz'),
-(5, 5, 10, 'Anime of the Season');
+(5, 5, 10, 'Anime of the Season'),
+(5, 13, 10, 'Saya suka endingnya'),
+(5, 2, 8, 'Saya suka visual novel'),
+(5, 30, 8, 'Saya suka kembar 5'),
+(5, 31, 8, 'TEAM NINO!!!'),
+(5, 32, 8, 'siapa nim nya 86'),
+(5, 33, 8, 'Agustina'),
+(5, 49, 6, 'banyak orang mati'),
+(5, 42, 9, 'anak smp membunuh gurunya, tidak sopan'),
+(5, 43, 9, 'giliran dah mati baru nangis, apa coba'),
+(5, 58, 1, 'anime kesukaan nizam'),
+(7, 40, 10, 'ayo camping, kita sudah menunggu'),
+(5, 34, 9, 'Nyanyame nyanyajyuunyanya do no nyarabi de nyaku nyaku inyanyaku nyanyahan nyanyadai nyan nyaku nyarabete nyaganyagame.'),
+(7, 41, 10, 'ayo camping lagi, kita sudah menunggu'),
+(5, 23, 8, 'orang pintar rambut kubis jadi dokter batu'),
+(5, 25, 8, 'wordt dr batu opening'),
+(5, 26, 8, 'Best dr batu opening frfr'),
+(7, 44, 8, 'sangat mencerminkan gweh'),
+(5, 24, 8, 'perang batu coy'),
+(7, 1, 9, 'nujabes-arurian dance'),
+(5, 19, 7, 'Astolfo exist here.'),
+(5, 14, 7, 'only good because Illya didn\'t die in this route'),
+(5, 17, 9, 'best Route, Rin best girl'),
+(5, 18, 9, 'Brave shine!!!!!!!!!'),
+(7, 47, 8, 'its good but there\'s some unnecessary long arc'),
+(5, 15, 8, 'overated opening'),
+(5, 16, 8, 'the opening is actually better than the first season\r\n'),
+(7, 20, 9, 'good storytelling and worldbuilding'),
+(5, 3, 5, 'goofy ah fantasy/isekai'),
+(5, 50, 7, 'ga suka voli'),
+(5, 51, 6, 'tetap ga suka voli'),
+(5, 52, 6, 'tetap masih ga suka voli'),
+(7, 31, 9, 'ichika best girl'),
+(5, 53, 6, 'voli terus, masih tetap ga suka'),
+(5, 54, 5, 'nyesal nonton'),
+(7, 42, 10, 'mari sekolah'),
+(5, 37, 8, 'great story, I just don\'t like Kanbaru'),
+(7, 43, 10, 'mari sekolah tapi sambil nangis'),
+(5, 21, 7, 'Polygamy NO WAY!!!'),
+(5, 22, 7, 'Polygamy again NOWAY!!!!!!!!!!!'),
+(5, 56, 7, 'anime kesukaan bang tegar'),
+(5, 36, 8, 'Shinobu best girl'),
+(5, 4, 6, 'Anime halu, ga tau kenapa dony suka'),
+(5, 48, 7, 'Random banget rek'),
+(9, 3, 10, 'Mantap sih adventure nya '),
+(5, 35, 8, 'Purachina Disco'),
+(5, 9, 10, 'Best anime pada season nya'),
+(9, 5, 3, 'Anime halu'),
+(5, 39, 8, 'gajelas arc nya rek'),
+(5, 57, 6, 'revi suka'),
+(8, 58, 10, 'Luxu banget rek, saya suka sekali.'),
+(9, 13, 9, 'Saya suka Arima Kana'),
+(5, 55, 7, 'slow life tapi panjang banget namanya rek'),
+(5, 20, 10, 'This and 100Kanojo best anime Fall 2023'),
+(8, 5, 1, 'Anime sampah, halu, tak bermutuuu!'),
+(5, 10, 10, 'masukkan pisang ke microwave jadi mesin waktu cooy'),
+(5, 11, 10, 'Bad ending kah ini?'),
+(5, 12, 10, 'time travel, Re:Zero 2.0'),
+(7, 58, 5, 'ada penyusup min'),
+(5, 46, 2, 'Oshiete, oshiete yo sono shikumi wo'),
+(5, 38, 8, 'VA nya the best'),
+(5, 47, 8, 'Kuyang rek'),
+(5, 1, 9, 'stoic'),
+(5, 6, 10, 'Best Anime, Maksud lo apa yang di bawah?, bawahnya bawahku  maksud lo juga apa?'),
+(5, 7, 10, 'BEST ANIME'),
+(5, 8, 10, 'BEST ANIME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'),
+(5, 44, 8, 'gue banget'),
+(5, 45, 8, 'Siapa yang bilang posternya tidak senonoh woi'),
+(5, 40, 7, 'ga pernah nonton, tapi cute keliatannya'),
+(5, 41, 7, 'yuru kah yuri ini?'),
+(5, 29, 7, 'kasiannya rek di tunda 3 bulan'),
+(7, 6, 8, 'orang yang diatasku suka totsuka saika'),
+(9, 6, 10, 'Atasnya atas ku gay'),
+(7, 14, 8, 'people die if they are killed\r\n-shirou emiya'),
+(7, 32, 6, 'hai, aku granat86'),
+(10, 32, 8, 'inpo min');
 
 -- --------------------------------------------------------
 
@@ -367,7 +445,12 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
 (2, 'test', '$2y$10$8e8PcZ8fhRIQiteK1xK.meD3FHMUkcijfJ5LqrhHfsZ8plXUbubB.', 'user'),
 (3, 'user', '$2y$10$q8qdX3PkiQx5IbDAdmsGzOEamQ3MlkqLBODFpuIybjmZjLlDsIKGS', 'user'),
 (4, 'admin', '$2y$10$Py/EWVcW6TKUGoGtZqzE/uHg4098ohjdhoR/7XKYeF0tATp8AYHCG', 'admin'),
-(5, 'ikki', '$2y$10$KrhMvF.PLSrKkwgLaYVj2eK1fdrNlPrcM5CIFAVFHUaEbhp0I8b3S', 'user');
+(5, 'ikki', '$2y$10$KrhMvF.PLSrKkwgLaYVj2eK1fdrNlPrcM5CIFAVFHUaEbhp0I8b3S', 'user'),
+(6, 'halo', '$2y$10$GzIhB6imaRBGuAYmP.jHmOcEerOk2II41cG4zCRwF7Y539Tt9ioVW', 'user'),
+(7, 'flure', '$2y$10$uuAcxF7kGH5qTZNfbUrEJuDfkKT9N7htM7/KRa9zpYVj8lKzeLhvy', 'user'),
+(8, 'Ujang_Mahendra', '$2y$10$sCGI1w668wMqUQ4InajBQ.73hD/Lce4vTaB3rImeUyLQpq//kWX5y', 'user'),
+(9, 'veirt', '$2y$10$XmvtootHrJ8atiF4/JESHe/EIY/PpEoh/KTRC0SaKBPmvX37ggsV.', 'user'),
+(10, 'teo', '$2y$10$xsEg8XwRpFXr7xZWu1rQJ.k03nBJXfB9U57PD47LAOzrZSemuTgHi', 'user');
 
 --
 -- Indexes for dumped tables
@@ -413,7 +496,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `anime`
 --
 ALTER TABLE `anime`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `genre`
@@ -425,7 +508,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
