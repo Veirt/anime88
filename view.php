@@ -218,7 +218,7 @@ function get_anime_ranking(int $id)
             <div class="anime-content">
                 <div class="anime-desc">
                     <h1><?= $row['name'] ?></h1>
-                    <p>
+                    <p style="white-space:pre-line">
                         <?= $row['synopsis'] ?>
                     </p>
                 </div>
